@@ -5,8 +5,10 @@ import (
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/errortracker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/config"
+	"github.com/clanbeat/mailer/src/sender"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 var router *gin.Engine
@@ -25,6 +27,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	//set up mailer
+	sender.SendgridSetup(os.Getenv("SENDGRID_USERNAME"), os.Getenv("SENDGRID_PASSWORD"))
+	if err := sender.CacheTemplates(templatePath()); err != nil {
+		fatalError(err)
+	}
+
 	//set up routes
 	initRoutes()
 
@@ -34,4 +42,19 @@ func main() {
 
 	//don't close before errors have been reported
 	errorTracker.Wait()
+}
+
+func templatePath() string {
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		fatalError(err)
+	}
+	return dir + "/templates"
+}
+
+func fatalError(err error) {
+	if err != nil {
+		errorTracker.ErrorAndWait(err)
+		log.Fatal(err)
+	}
 }

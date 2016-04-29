@@ -1,2 +1,2 @@
 #Mailer
-Sends emails out
+Sends out emails

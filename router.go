@@ -15,4 +15,10 @@ func initRoutes() {
 
 	router.GET("/status", getStatus)
 	router.OPTIONS("/status")
+	v1 := router.Group("/v1")
+	{
+		v1.POST("/send", postEmail)
+		v1.OPTIONS("/send")
+
+	}
 }
