@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/clanbeat/broker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/errortracker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/config"
@@ -14,6 +15,7 @@ import (
 var router *gin.Engine
 var errorTracker *errortracker.Tracker
 var env *config.AppConfig
+var brokerConn *broker.Connection
 
 func main() {
 
@@ -32,6 +34,14 @@ func main() {
 	if err := sender.CacheTemplates(templatePath()); err != nil {
 		fatalError(err)
 	}
+
+	//set up queue handling
+	brokerConn, err = broker.New(os.Getenv("CLOUDAMQP_URL"), errorTrackerFunc())
+	if err != nil {
+		fatalError(err)
+	}
+	defer brokerConn.Close()
+	registerBrokerHandlers()
 
 	//set up routes
 	initRoutes()
@@ -56,5 +66,11 @@ func fatalError(err error) {
 	if err != nil {
 		errorTracker.ErrorAndWait(err)
 		log.Fatal(err)
+	}
+}
+
+func errorTrackerFunc() func(err error) {
+	return func(err error) {
+		errorTracker.Error(err)
 	}
 }
