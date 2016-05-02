@@ -6,6 +6,10 @@
 	],
 	"Deps": [
 		{
+			"ImportPath": "github.com/clanbeat/broker",
+			"Rev": "291f3fc21cbdc0e54d6deddc9337a9fb4f252869"
+		},
+		{
 			"ImportPath": "github.com/clanbeat/errortracker",
 			"Rev": "770156a0ea409130ecbaed58f67eb6059ffa039d"
 		},
@@ -25,6 +29,24 @@
 		{
 			"ImportPath": "github.com/mattn/go-colorable",
 			"Rev": "40e4aedc8fabf8c23e040057540867186712faa5"
+		},
+		{
+			"ImportPath": "github.com/satori/go.uuid",
+			"Rev": "d41af8bb6a7704f00bc3b7cba9355ae6a5a80048"
+		},
+		{
+			"ImportPath": "github.com/sendgrid/sendgrid-go",
+			"Comment": "v2.0.0-3-g186c04a",
+			"Rev": "186c04acda510e050536deda27d578d80afe775d"
+		},
+		{
+			"ImportPath": "github.com/sendgrid/smtpapi-go",
+			"Comment": "v0.4.0",
+			"Rev": "08102729bcf72bfe74dde6c0da8e0423e94090ca"
+		},
+		{
+			"ImportPath": "github.com/streadway/amqp",
+			"Rev": "b4f3ceab0337f013208d31348b578d83c0064744"
 		},
 		{
 			"ImportPath": "golang.org/x/net/context",

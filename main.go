@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/clanbeat/broker"
+	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/broker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/errortracker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/config"

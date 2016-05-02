@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/clanbeat/broker"
+	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/broker"
 	"github.com/clanbeat/mailer/src/sender"
 	"log"
 )

@@ -1,7 +1,7 @@
 package sender
 
 import (
-	"github.com/sendgrid/sendgrid-go"
+	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/sendgrid/sendgrid-go"
 	"html/template"
 	"log"
 )
