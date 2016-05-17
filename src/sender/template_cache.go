@@ -4,31 +4,48 @@ import (
 	"fmt"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
 	"html/template"
-	"io/ioutil"
+	"log"
+	"os"
 	"path/filepath"
+	"strings"
 )
 
-type TemplateCache map[string]*template.Template
+type (
+	TemplateCache map[string]*template.Template
 
-type Render struct {
-	tmpl *template.Template
-	data interface{}
-}
+	Render struct {
+		tmpl *template.Template
+		data interface{}
+	}
+
+	fileInfo struct {
+		Path         string
+		TemplateName string
+		Name         string
+		Layout       string
+	}
+)
+
+var currentCache TemplateCache
 
 const layoutTemplate = "layout"
 
 func BuildTemplateCache(path string) (TemplateCache, error) {
-	tmplts := make(TemplateCache)
-	fnames, err := files(path)
+	if len(currentCache) > 0 {
+		return currentCache, nil
+	}
+
+	tmplts := &TemplateCache{}
+	files, err := getFiles(path)
 	if err != nil {
 		return tmplts, err
 	}
-
-	for _, fname := range fnames {
-		if fname != layoutTemplate {
-			tmplts[fname] = template.Must(parseTemplate(path, fname))
+	for _, f := range files {
+		if f.TemplateName != layoutTemplate {
+			tmplts[f.TemplateName] = template.Must(template.ParseFiles(f.Layout, f.Path))
 		}
 	}
+	currentCache = tmplts
 	return tmplts, nil
 }
 
@@ -40,26 +57,31 @@ func (t TemplateCache) Instance(name string, data interface{}) render.Render {
 	}
 }
 
-func parseTemplate(path, fname string) (*template.Template, error) {
-	layout := fmt.Sprintf("%s/layout.html", path)
-	content := fmt.Sprintf("%s/%s.html", path, fname)
-	return template.ParseFiles(layout, content)
+func removeExtension(filename string) string {
+	return strings.TrimSuffix(filename, filepath.Ext(filename))
 }
 
-func files(path string) ([]string, error) {
-	var names []string
-	files, err := ioutil.ReadDir(path)
-	if err != nil {
-		return names, err
-	}
-	for _, f := range files {
-		names = append(names, fileWithoutExtension(f.Name()))
-	}
-	return names, nil
+func getFiles(searchDir string) ([]fileInfo, error) {
+	var files []fileInfo
+	err := filepath.Walk(searchDir, func(path string, f os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if !f.IsDir() {
+			files = append(files, newFile(path, f))
+		}
+		return nil
+	},
+	)
+	return files, err
 }
 
-func fileWithoutExtension(filename string) string {
-	fName := filepath.Base(filename)
-	extName := filepath.Ext(filename)
-	return fName[:len(fName)-len(extName)]
+func newFile(path string, f os.FileInfo) fileInfo {
+	layout := fmt.Sprintf("%s%s.html", strings.TrimSuffix(path, f.Name()), layoutTemplate)
+	return fileInfo{
+		TemplateName: removeExtension(f.Name()),
+		Name:         f.Name(),
+		Path:         path,
+		Layout:       layout,
+	}
 }
