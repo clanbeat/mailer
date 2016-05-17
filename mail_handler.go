@@ -21,3 +21,8 @@ func postEmail(c *gin.Context) {
 	}
 	c.AbortWithStatus(http.StatusNoContent)
 }
+
+func getEmail(c *gin.Context) {
+	name := c.Param("name")
+	c.HTML(http.StatusOK, name, gin.H{"title": "Welcome!"})
+}

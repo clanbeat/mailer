@@ -2,17 +2,23 @@ package sender
 
 import (
 	"fmt"
+	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
 	"html/template"
 	"io/ioutil"
 	"path/filepath"
 )
 
-type templateCache map[string]*template.Template
+type TemplateCache map[string]*template.Template
+
+type Render struct {
+	tmpl *template.Template
+	data interface{}
+}
 
 const layoutTemplate = "layout"
 
-func buildTemplateCache(path string) (templateCache, error) {
-	tmplts := make(templateCache)
+func BuildTemplateCache(path string) (TemplateCache, error) {
+	tmplts := make(TemplateCache)
 	fnames, err := files(path)
 	if err != nil {
 		return tmplts, err
@@ -24,6 +30,14 @@ func buildTemplateCache(path string) (templateCache, error) {
 		}
 	}
 	return tmplts, nil
+}
+
+func (t TemplateCache) Instance(name string, data interface{}) render.Render {
+	return render.HTML{
+		Template: t[name],
+		Name:     layoutTemplate,
+		Data:     data,
+	}
 }
 
 func parseTemplate(path, fname string) (*template.Template, error) {

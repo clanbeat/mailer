@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/broker"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/errortracker"
-	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/config"
 	"github.com/clanbeat/mailer/src/sender"
 	"log"
@@ -12,7 +10,6 @@ import (
 	"path/filepath"
 )
 
-var router *gin.Engine
 var errorTracker *errortracker.Tracker
 var env *config.AppConfig
 var brokerConn *broker.Connection
@@ -20,6 +17,7 @@ var brokerConn *broker.Connection
 func main() {
 
 	//set up environment
+	templatePath := templatePath()
 	env = config.New(os.Getenv("ENV"))
 
 	//set up error reporting
@@ -31,7 +29,7 @@ func main() {
 
 	//set up mailer
 	sender.SendgridSetup(os.Getenv("SENDGRID_USERNAME"), os.Getenv("SENDGRID_PASSWORD"))
-	if err := sender.CacheTemplates(templatePath()); err != nil {
+	if err := sender.CacheTemplates(templatePath); err != nil {
 		fatalError(err)
 	}
 
@@ -43,12 +41,8 @@ func main() {
 	defer brokerConn.Close()
 	registerBrokerHandlers()
 
-	//set up routes
-	initRoutes()
-
 	//start server
-	log.Println(fmt.Sprintf("=> Starting in %s on http://0.0.0.0:%s", env.Env, os.Getenv("PORT")))
-	router.Run(":" + os.Getenv("PORT"))
+	initRoutes(templatePath)
 
 	//don't close before errors have been reported
 	errorTracker.Wait()

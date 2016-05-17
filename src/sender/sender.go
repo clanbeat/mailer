@@ -24,7 +24,7 @@ func SendgridSetup(username, secret string) {
 }
 
 func CacheTemplates(path string) error {
-	if cache, err := buildTemplateCache(path); err != nil {
+	if cache, err := BuildTemplateCache(path); err != nil {
 		return err
 	} else {
 		Config.TemplateCache = cache
@@ -48,7 +48,6 @@ func Send(em *Mailable) error {
 	}
 
 	message.SetHTML(msg)
-	log.Println(message)
 	log.Println("Email sent to", em.To)
 	if err := sg.Send(message); err == nil {
 		return nil

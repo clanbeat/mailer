@@ -7,7 +7,5 @@ import (
 )
 
 func getStatus(c *gin.Context) {
-	// TODO check if storage, message queue or other dependent system is up
-
 	c.JSON(http.StatusOK, gin.H{"status": "OK", "timestamp": time.Now().Unix()})
 }
