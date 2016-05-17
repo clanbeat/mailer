@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
 	"html/template"
-	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -35,7 +34,7 @@ func BuildTemplateCache(path string) (TemplateCache, error) {
 		return currentCache, nil
 	}
 
-	tmplts := &TemplateCache{}
+	tmplts := TemplateCache{}
 	files, err := getFiles(path)
 	if err != nil {
 		return tmplts, err
