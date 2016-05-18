@@ -1,16 +1,102 @@
 {{ define "content" }}
 <br />
-<div class="logo" style="font-family:Helvetica, Arial, sans-serif;font-size:32px;font-weight:600;color:#374550">
-  <span style="color:#6d5bbc;font-size: 16px;">ClanBeat</span>
+<div class="logo" style="text-align:center;">
+  <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.jpg" style="height:25px;" />
 </div>
+
 <br />
 <br />
+<div style="text-align:center;">
+  <h1>Your monthly summary</h1>
+  <span style="font-size: 16px;color: #fd067d;">{{ .Start }} - {{ .End }} </span>
+</div>
 <div class="body-text">
-  Hi!<br /><br />
+  Hey, {{ .User.FirstName }}! This is just a quick overview,
+  at the end of every month you'll receive one like this.
 
-  Your payment failed.<br /><br />
+  <div style="">------</div>
+  <div>
+    <h2>Mood Level</h2>
+    <div>mood bar</div>
+    <div>
+      You had {{ .Totals.HighsPercentage }}% highs ({{ .Totals.HighsCount }} posts)
+      and {{ .Totals.LowsPercentage }} lows ({{ .Totals.LowsCount }} posts).
+      That’s {{ .Totals.HighsDelta }} {{ .MoreORLess }} highs
+      and {{ .Totals.LowsDelta }} {{ .MoreORLess }} lows than previous month.
+    </div>
+  </div>
+  <div class="totals">
+    <span style=""></span>
+    <table>
+      <tr>
+        <td>Total posts</td>
+        <td>Public posts</td>
+        <td>Private posts</td>
+      </tr>
+      <tr>
+        <td>
+          {{ .Totals.TotalMoods }}
+          <span>{{ .Totals.TotalMoodsDelta }}</span>
+        </td>
+        <td>
+          {{ .Totals.TotalPublicMoods }}
+          <span>{{ .Totals.TotalPublicMoodsDelta }}</span>
+        </td>
+        <td>
+          {{ .Totals.TotalPrivateMoods }}
+          <span>{{ .Totals.TotalPrivateMoodsDelta }}</span>
+        </td>
+      </tr>
+    </table>
+    <span style=""></span>
+  </div>
+  <div>
+    Looking great! Keep up the good work! <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/party.png"  />
+  </div>
+  <div style="">------</div>
+  <div>
+    <h2>Happiness level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/star.png"  /></h2>
+    <table>
+    {{ range $index, $item :=  .Happyness }}
+        <tr>
+          <td>#{{ $item.Position }}</td>
+          <td><img src="{{ $item.Picture }}" alt="{{ $item.Username }}" /></td>
+          <td>{{ $item.Username }} <br /> {{ $item.JobTitle }}</td>
+          <td>{{ $item.Percentage }}</td>
+        <tr>
+    {{ end }}
+    </table>
+  </div>
+  <div style="">------</div>
+  <div>
+    <h2>Activity level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/campfire.png"  /></h2>
+    <table>
+    {{ range $index, $item := .Activity }}
+        <tr>
+          <td>#{{ $item.Position }}</td>
+          <td><img src="{{ $item.Picture }}" alt="{{ $item.Username }}" /></td>
+          <td>{{ $item.Username }} <br /> {{ $item.JobTitle }}</td>
+          <td>{{ $item.Percentage }}</td>
+        <tr>
+    {{ end }}
+    </table>
+  </div>
+  <div style="">------</div>
+  <div>
+    <h2>Activity level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/handsup.png"  /></h2>
+    <table>
+    {{ range $index, $item := .Reviews }}
 
-  Yours truly, <br />
-  Clanbeat
+        <tr>
+          <td>{{ $item.Date }}</td>
+          <td><img src="{{ $item.Picture }}" alt="{{ $item.Username }}" /></td>
+          <td>{{ $item.Username }} <br /> {{ $item.JobTitle }}</td>
+          <td>Button?</td>
+        <tr>
+
+    {{ end }}
+    </table>
+  </div>
+  <div style="">------</div>
 </div>
 {{ end }}

@@ -1,9 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/sender"
-	"log"
 	"net/http"
 )
 
@@ -14,7 +14,6 @@ func postEmail(c *gin.Context) {
 		c.JSON(badRequest(err.Error()))
 		return
 	}
-	log.Println("email", m)
 	if err := sender.Send(m); err != nil {
 		c.JSON(badRequest(err.Error()))
 		return
@@ -24,5 +23,18 @@ func postEmail(c *gin.Context) {
 
 func getEmail(c *gin.Context) {
 	name := c.Param("name")
-	c.HTML(http.StatusOK, name, gin.H{"title": "Welcome!"})
+
+	var m map[string]interface{}
+	err := json.Unmarshal(testData[name], &m)
+
+	if err != nil {
+		c.AbortWithStatus(http.StatusInternalServerError)
+	}
+
+	c.HTML(http.StatusOK, name, m)
+}
+
+var testData = map[string][]byte{
+	"adminStats":  []byte(`{"user": {"firstName":"Gloria"}}`),
+	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
 }
