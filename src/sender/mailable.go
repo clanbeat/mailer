@@ -3,7 +3,9 @@ package sender
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"html/template"
+	"math"
 )
 
 type Mailable struct {
@@ -12,6 +14,43 @@ type Mailable struct {
 	Subject  string                 `json:"subject"`
 	Message  map[string]interface{} `json:"message"`
 	Template string                 `json:"template"`
+}
+
+var funcMap = template.FuncMap{
+	"addReviewSeparator": addReviewSeparator,
+	"isMiddle":           isMiddle,
+	"hasMiddle":          hasMiddle,
+	"colorForList":       colorForList,
+	"lessOrMore":         lessOrMore,
+}
+
+func addReviewSeparator(i int) bool {
+	return i != 0
+}
+
+func hasMiddle(s int, max int) bool {
+	return s == max
+}
+
+func isMiddle(i int, total int) bool {
+	return i == total/2
+}
+
+func colorForList(i int, hasMiddle bool) string {
+	green := "#7ed220"
+	red := "#f8503b"
+
+	if !hasMiddle || i < 3 {
+		return green
+	}
+	return red
+}
+
+func lessOrMore(d float64) string {
+	if d > 0 {
+		return fmt.Sprintf("%d more", int64(d))
+	}
+	return fmt.Sprintf("%d less", int64(math.Abs(d)))
 }
 
 func (m *Mailable) content(tmplts map[string]*template.Template) (string, error) {

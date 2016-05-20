@@ -41,7 +41,9 @@ func BuildTemplateCache(path string) (TemplateCache, error) {
 	}
 	for _, f := range files {
 		if f.TemplateName != layoutTemplate {
-			tmplts[f.TemplateName] = template.Must(template.ParseFiles(f.Layout, f.Path))
+			tmplts[f.TemplateName] = template.Must(
+				template.New("").Funcs(funcMap).ParseFiles(f.Layout, f.Path),
+			)
 		}
 	}
 	currentCache = tmplts
