@@ -94,50 +94,50 @@ var testData = map[string][]byte{
 			"happiness": [{
 				"username": "Janika Liiv",
 				"position": 1,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Gloria Paul",
 				"position": 2,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Janika",
 				"position": 3,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Gloria Paul",
 				"position": 4,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Janika",
 				"position": 5,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Gloria Paul",
 				"position": 6,
-				"percentage": 99,
+				"value": 99,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
 			"activity": [{
 				"username": "Janika Liiv",
 				"position": 1,
-				"count": 10,
+				"value": 10,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Agu Suur",
 				"position": 1,
-				"count": 5,
+				"value": 5,
 				"jobTitle": "Front End Master",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145942953651036900117"
 			}]

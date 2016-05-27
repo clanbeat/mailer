@@ -77,7 +77,7 @@
               <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
             </td>
             {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
-              <td style="color:#7ed220;text-align:right;color:{{$color}};">{{ $item.percentage }}%</td>
+              <td style="color:#7ed220;text-align:right;color:{{$color}};">{{ $item.value }}%</td>
             {{ end }}
           <tr>
           {{ end }}
@@ -107,7 +107,7 @@
               <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
             </td>
             {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
-              <td style="text-align:right;color:{{$color}};">{{ $item.count }} posts</td>
+              <td style="text-align:right;color:{{$color}};">{{ $item.value }} posts</td>
             {{ end }}
           <tr>
           {{ end }}
