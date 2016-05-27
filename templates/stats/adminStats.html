@@ -55,62 +55,66 @@
   <div style="text-align:center;">
     Looking great! Keep up the good work! <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/party.png"  />
   </div>
-  <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
-  <div style="text-align:center;">
-    <h2>Happiness level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/star.png"  /></h2>
-    <table style="width:100%;margin-top:30px;">
-      {{ with $items := .happiness }}
+  {{ if gt (len .happiness) 0 }}
+    <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+    <div style="text-align:center;">
+      <h2>Happiness level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/star.png"  /></h2>
+      <table style="width:100%;margin-top:30px;">
+        {{ with $items := .happiness }}
+          {{ range $index, $item := $items }}
+            {{ if and (hasMiddle (len $items) 6) (isMiddle $index 6) }}
+              <tr><td colspan="4" style="border-bottom: 1px dashed #fcc331;"></td></tr>
+            {{ end }}
+          <tr style="height:70px;">
+            <td style="width:50px;text-align:left;">
+              #{{ $item.position }}
+            </td>
+            <td style="width:70px;">
+              <div style="width:50px;height: 50px;border-radius:50%;margin-right:20px;background-image:url('{{ $item.picture }}');background-size: cover;background-position:center center;background-repeat: no-repeat;"></div>
+            </td>
+            <td style="text-align:left;">
+              <div style="font-weight:bold;">{{ $item.username }}</div>
+              <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
+            </td>
+            {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
+              <td style="color:#7ed220;text-align:right;color:{{$color}};">{{ $item.percentage }}%</td>
+            {{ end }}
+          <tr>
+          {{ end }}
+      {{ end }}
+      </table>
+    </div>
+  {{ end }}
+  {{ if gt (len .activity) 0 }}
+    <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+    <div style="text-align:center;">
+      <h2>Activity level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/campfire.png"  /></h2>
+      <table style="width:100%;margin-top:30px;">
+      {{ with $items := .activity }}
         {{ range $index, $item := $items }}
           {{ if and (hasMiddle (len $items) 6) (isMiddle $index 6) }}
             <tr><td colspan="4" style="border-bottom: 1px dashed #fcc331;"></td></tr>
           {{ end }}
-        <tr style="height:70px;">
-          <td style="width:50px;text-align:left;">
-            #{{ $item.position }}
-          </td>
-          <td style="width:70px;">
-            <div style="width:50px;height: 50px;border-radius:50%;margin-right:20px;background-image:url('{{ $item.picture }}');background-size: cover;background-position:center center;background-repeat: no-repeat;"></div>
-          </td>
-          <td style="text-align:left;">
-            <div style="font-weight:bold;">{{ $item.username }}</div>
-            <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
-          </td>
-          {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
-            <td style="color:#7ed220;text-align:right;color:{{$color}};">{{ $item.percentage }}%</td>
+          <tr style="height:70px;">
+            <td style="width:50px;text-align:left;">
+              #{{ $item.position }}
+            </td>
+            <td style="width:70px;">
+              <div style="width:50px;height: 50px;border-radius:50%;margin-right:20px;background-image:url('{{ $item.picture }}');background-size: cover;background-position:center center;background-repeat: no-repeat;"></div>
+            </td>
+            <td style="text-align:left;">
+              <div style="font-weight:bold;">{{ $item.username }}</div>
+              <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
+            </td>
+            {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
+              <td style="text-align:right;color:{{$color}};">{{ $item.count }} posts</td>
+            {{ end }}
+          <tr>
           {{ end }}
-        <tr>
         {{ end }}
-    {{ end }}
-    </table>
-  </div>
-  <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
-  <div style="text-align:center;">
-    <h2>Activity level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/campfire.png"  /></h2>
-    <table style="width:100%;margin-top:30px;">
-    {{ with $items := .activity }}
-      {{ range $index, $item := $items }}
-        {{ if and (hasMiddle (len $items) 6) (isMiddle $index 6) }}
-          <tr><td colspan="4" style="border-bottom: 1px dashed #fcc331;"></td></tr>
-        {{ end }}
-        <tr style="height:70px;">
-          <td style="width:50px;text-align:left;">
-            #{{ $item.position }}
-          </td>
-          <td style="width:70px;">
-            <div style="width:50px;height: 50px;border-radius:50%;margin-right:20px;background-image:url('{{ $item.picture }}');background-size: cover;background-position:center center;background-repeat: no-repeat;"></div>
-          </td>
-          <td style="text-align:left;">
-            <div style="font-weight:bold;">{{ $item.username }}</div>
-            <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
-          </td>
-          {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
-            <td style="text-align:right;color:{{$color}};">{{ $item.count }} posts</td>
-          {{ end }}
-        <tr>
-        {{ end }}
-      {{ end }}
-    </table>
-  </div>
-  <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+      </table>
+    </div>
+    <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+  {{ end }}
 </div>
 {{ end }}
