@@ -1,7 +1,7 @@
 {{ define "content" }}
 <br />
 <div class="logo" style="text-align:center;margin-bottom: 50px;">
-  <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.jpg" style="height:25px;" />
+  <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.jpg" style="height:25px;" height="25"/>
 </div>
 <div style="text-align:center;margin-bottom:50px;">
   <h1 style="margin-bottom: 15px;">Your monthly summary</h1>
@@ -13,7 +13,7 @@
     at the end of every month you'll receive one like this.
   </div>
   <div style="margin-top:20px;margin-bottom:20px;height:18px;background-size: auto 10px;background-repeat: repeat-x;background-image:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg')"></div>
-  <div>
+  <div style="text-align:center;">
     <h2>Mood Level</h2>
     <table style="width:100%;margin-top:25px;margin-bottom:25px;">
       <tr>
@@ -21,7 +21,7 @@
         <td style="height:15px;background-color:#7ed220;border-radius:0 3px 3px 0;width:{{ .totals.highsPercentage }}%;"></td>
       </tr>
     </table>
-    <div>
+    <div >
       Your clan had <span style="color:#7ed220;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
       and <span style="color:#f8503b;">{{ .totals.lowsPercentage }}% lows</span> ({{ .totals.lowsCount }} posts).
       <br />
@@ -29,8 +29,7 @@
       and {{ lessOrMore .totals.lowsDelta }} lows than previous month.
     </div>
   </div>
-  <div class="totals">
-    <span style=""></span>
+  <div class="totals" style="text-align:center;">
     <table style="margin:25px 0 25px 0;padding:20px 0 20px 0;margin-bottom:25px;width:100%;border-top:1px dashed #7058c1;border-bottom:1px dashed #7058c1;">
       <tr>
         <td>Total posts</td>
@@ -52,13 +51,12 @@
         </td>
       </tr>
     </table>
-    <div style=""></div>
   </div>
-  <div>
+  <div style="text-align:center;">
     Looking great! Keep up the good work! <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/party.png"  />
   </div>
   <div style="margin: 30px 0 20px 0;height:18px;background-size: auto 10px;background-repeat: repeat-x;background-image:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg')"></div>
-  <div>
+  <div style="text-align:center;">
     <h2>Happiness level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/star.png"  /></h2>
     <table style="width:100%;margin-top:30px;">
       {{ with $items := .happiness }}
@@ -86,7 +84,7 @@
     </table>
   </div>
   <div style="margin: 20px 0 20px 0;height:18px;background-size: auto 10px;background-repeat: repeat-x;background-image:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg')"></div>
-  <div>
+  <div style="text-align:center;">
     <h2>Activity level <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/campfire.png"  /></h2>
     <table style="width:100%;margin-top:30px;">
     {{ with $items := .activity }}
