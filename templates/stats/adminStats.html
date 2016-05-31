@@ -15,10 +15,10 @@
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
   <div style="text-align:center;">
     <h2>Mood Level</h2>
-    <table style="width:100%;margin-top:25px;margin-bottom:25px;">
+    <table width="100%" style="width:100%!important;margin-top:25px;margin-bottom:25px;">
       <tr>
-        <td style="height:15px;background-color:#f8503b;border-radius:3px 0 0 3px;width:{{ .totals.lowsPercentage }}%;"></td>
-        <td style="height:15px;background-color:#7ed220;border-radius:0 3px 3px 0;width:{{ .totals.highsPercentage }}%;"></td>
+        <td style="border:none;height:15px;background-color:#f8503b;border-radius:3px 0 0 3px;width:{{ .totals.lowsPercentage }}%;"></td>
+        <td style="border:none;height:15px;background-color:#7ed220;border-radius:0 3px 3px 0;width:{{ .totals.highsPercentage }}%;"></td>
       </tr>
     </table>
     <div >
@@ -66,7 +66,7 @@
               <tr><td colspan="4" style="border-bottom: 1px dashed #fcc331;"></td></tr>
             {{ end }}
           <tr style="height:70px;">
-            <td style="width:50px;text-align:left;">
+            <td style="width:30px;text-align:left;">
               #{{ $item.position }}
             </td>
             <td style="width:70px;">
@@ -96,7 +96,7 @@
             <tr><td colspan="4" style="border-bottom: 1px dashed #fcc331;"></td></tr>
           {{ end }}
           <tr style="height:70px;">
-            <td style="width:50px;text-align:left;">
+            <td style="width:30px;text-align:left;">
               #{{ $item.position }}
             </td>
             <td style="width:70px;">
