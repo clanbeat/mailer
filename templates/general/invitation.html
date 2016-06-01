@@ -1,26 +1,33 @@
 {{ define "content" }}
 <br />
-<div class="logo" style="font-family:Helvetica, Arial, sans-serif;font-size:32px;font-weight:600;color:#374550">
-  <span style="color:#673ab7">Clan</span>Beat
+<a href="https://clanbeat.com" target="_blank">
+    <img src="https://clanbeat.com/images/logo.svg" width="102" height="22" alt="Clanbeat logo" style="outline: none; -ms-interpolation-mode: bicubic; display: block;">
+</a>
+<div class="title-text">
+  You're invited
+  <br>
 </div>
-<br />
-<br />
-
-<div style="text-align:center;">
-  <a href="{{ .Link }}"
-    style="padding-left:5px;padding-right:5px;background-color:#673ab7;border-radius:6px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:24px;font-weight:bold;line-height:60px;text-align:center;text-decoration:none;-webkit-text-size-adjust:none;">Join {{ .ProjectName }}</a>
-  <br><br>
+<div class="pink-text">
+  And you will love it ❤️
+  <br>
 </div>
-<br>
-
 <div class="body-text">
-  Clanbeat a unique tool that helps track and manage the heartbeat of teams. It’s designed to create addictively good work environments and support team members’ personal growth.
-  <br><br>
-  You’re on your way to:
-  <ul>
-    <li>getting daily insight into your highs and lows to discover and solve motivation killers when they arise.</li>
-    <li>doing reviews that help you focus on what’s important and develop yourself as a professional.</li>
-  </ul>
-  <br><br>
+  { .username } wants you to join the clan { .clanname } on Clanbeat. Clanbeat is a HR tool that puts employee first. Meaningful 1-on-1s are on your way!
 </div>
+  <div style="text-align:center; padding-bottom: 50px;">
+  <a href=""
+    style="padding-left:30px;
+	    padding-right:30px;
+		background-color:#6D5BBC;
+		border-radius:8px;
+		color:#ffffff;
+		display:inline-block;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size:23px;
+		line-height:45px;
+		text-align:center; 
+		font-weight: 600; 
+		text-decoration:none;
+		-webkit-text-size-adjust:none;">Join { .clanname }</a>
+  </div>
 {{ end }}
