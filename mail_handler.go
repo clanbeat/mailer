@@ -26,9 +26,11 @@ func getEmail(c *gin.Context) {
 
 	var m map[string]interface{}
 
-	if err := json.Unmarshal(testData[name], &m); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error_message": "something went wrong"})
-		return
+	if testData[name] != nil {
+		if err := json.Unmarshal(testData[name], &m); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error_message": "something went wrong"})
+			return
+		}
 	}
 
 	c.HTML(http.StatusOK, name, m)
