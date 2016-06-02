@@ -12,10 +12,10 @@
   <br>
 </div>
 <div class="body-text">
-  { .username } wants you to join the clan { .clanname } on Clanbeat. Clanbeat is a HR tool that puts employee first. Meaningful 1-on-1s are on your way!
+  {{ .inviterName }} wants you to join the clan {{ .projectName }} on Clanbeat. Clanbeat is a HR tool that puts employee first. Meaningful 1-on-1s are on your way!
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href=""
+  <a href="{{ .link }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -25,9 +25,9 @@
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size:23px;
 		line-height:45px;
-		text-align:center; 
-		font-weight: 600; 
+		text-align:center;
+		font-weight: 600;
 		text-decoration:none;
-		-webkit-text-size-adjust:none;">Join { .clanname }</a>
+		-webkit-text-size-adjust:none;">Join {{ .projectName }}</a>
   </div>
 {{ end }}
