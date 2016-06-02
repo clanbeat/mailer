@@ -25,10 +25,10 @@ func getEmail(c *gin.Context) {
 	name := c.Param("name")
 
 	var m map[string]interface{}
-	err := json.Unmarshal(testData[name], &m)
 
-	if err != nil {
-		c.AbortWithStatus(http.StatusInternalServerError)
+	if err := json.Unmarshal(testData[name], &m); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error_message": "something went wrong"})
+		return
 	}
 
 	c.HTML(http.StatusOK, name, m)
