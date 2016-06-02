@@ -24,16 +24,19 @@ func postEmail(c *gin.Context) {
 func getEmail(c *gin.Context) {
 	name := c.Param("name")
 
-	var m map[string]interface{}
-
+	m := make(map[string]interface{})
+	if !sender.TemplateExists(name) {
+		c.JSON(http.StatusNotFound, gin.H{"error_message": "template missing"})
+		return
+	}
 	if testData[name] != nil {
 		if err := json.Unmarshal(testData[name], &m); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error_message": "something went wrong"})
 			return
 		}
 	}
-
 	c.HTML(http.StatusOK, name, m)
+
 }
 
 var testData = map[string][]byte{
