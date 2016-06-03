@@ -2,7 +2,7 @@ package main
 
 var testData = map[string][]byte{
 	"invitation": []byte(`{
-    "inviterName": "Gloria",
+    "inviterName": "Gloria Paul",
     "projectName": "Vikings"
   }`),
 	"personalStats": []byte(`{
