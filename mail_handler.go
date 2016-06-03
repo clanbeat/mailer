@@ -56,7 +56,7 @@ func sendTest(c *gin.Context) {
 	}
 	m := &sender.Mailable{
 		To:       email,
-		From:     "hello@clanbeat.com",
+		From:     "Clanbeat <hello@clanbeat.com>",
 		Subject:  "Test email",
 		Template: name,
 		Message:  d,
