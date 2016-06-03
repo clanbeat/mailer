@@ -38,3 +38,32 @@ func getEmail(c *gin.Context) {
 	c.HTML(http.StatusOK, name, m)
 
 }
+
+func sendTest(c *gin.Context) {
+	name := c.Param("name")
+	email := c.Param("email")
+
+	if !sender.TemplateExists(name) {
+		c.JSON(http.StatusNotFound, gin.H{"error_message": "template missing"})
+		return
+	}
+	d := make(map[string]interface{})
+	if testData[name] != nil {
+		if err := json.Unmarshal(testData[name], &d); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error_message": "something went wrong"})
+			return
+		}
+	}
+	m := &sender.Mailable{
+		To:       email,
+		From:     "hello@clanbeat.com",
+		Subject:  "Test email",
+		Template: name,
+		Message:  d,
+	}
+	if err := sender.Send(m); err != nil {
+		c.JSON(badRequest(err.Error()))
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": "email sent"})
+}
