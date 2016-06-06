@@ -19,13 +19,15 @@ func initRoutes(templatePath string) {
 	router.GET("/emails/:name", getEmail)
 	router.OPTIONS("/emails/:name")
 
+	router.GET("/test/:name/:email", sendTest)
+	router.OPTIONS("/test/:name/:email")
+
 	router.GET("/status", getStatus)
 	router.OPTIONS("/status")
 	v1 := router.Group("/v1")
 	{
 		v1.POST("/send", postEmail)
 		v1.OPTIONS("/send")
-
 	}
 	//start server
 	log.Println(fmt.Sprintf("=> Starting in %s on http://0.0.0.0:%s", env.Env, os.Getenv("PORT")))

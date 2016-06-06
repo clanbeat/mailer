@@ -32,6 +32,10 @@ func CacheTemplates(path string) error {
 	return nil
 }
 
+func TemplateExists(name string) bool {
+	return Config.TemplateCache[name] != nil
+}
+
 func Send(em *Mailable) error {
 	if err := em.validate(); err != nil {
 		return err
