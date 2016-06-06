@@ -28,10 +28,10 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, { .firstname }. { .username } joined the clan { .clanname } on Clanbeat. You can manage your clan in the clan page.
+  Hi, {{ .memberName }} joined the clan {{ .projectName }} on Clanbeat. You can manage your clan on the clan page.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href=""
+  <a href="{{ .accountLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -53,6 +53,5 @@
   color:#333233;
   width: 500px;
   font-weight: 400;" align="center">
-  <p>If you no longer wish to receive  notifications about accepted invitations, <u><font color="#6D5BBC"> unsubscribe here.</font></u>
 </div>
 {{ end }}
