@@ -28,10 +28,10 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, { .firstname }. We noticed that you haven’t posted any highs or lows today. Don’t forget to do it. Actually, why not do it now?
+  Hi, {{ .username }}. We noticed that you haven’t posted any highs or lows today. Don’t forget to do it. Actually, why not do it now?
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href=""
+  <a href="{{ .buttonLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -63,6 +63,7 @@ Posting everyday helps to track your motivators and mood killers. So you can hav
   color:#333233;
   width: 500px;
   font-weight: 400;" align="center">
-  <p>You can change email frequency from Clanbeat <u><font color="#6D5BBC"> settings page.</font></u></p><p> If you no longer wish to receive reminders, <u><font color="#6D5BBC">unsubscribe here.</font></u></p>
+  <p>You can change email frequency from Clanbeat <a href="{{ .settingsLink }}"><font color="#6D5BBC"> settings page.</font></a></p>
+  <p> If you no longer wish to receive reminders, <a href="{{ .unsubscribeLink }}"><font color="#6D5BBC">unsubscribe here.</font></a></p>
 </div>
 {{ end }}
