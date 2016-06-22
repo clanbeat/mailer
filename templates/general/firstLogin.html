@@ -30,7 +30,17 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  We are here to take the feeling of the clan to a new level.
+  As a founder and admin of this clan your can:
+<div>
+  <ul>
+    <li>invite and manage new clan members</li>
+    <li>prepare for 1-on-1s and add private notes</li>
+    <li>have 1-on-1s with everybody in your clan</li>
+    <li>get personal checklist of items you agreed on during 1-on-1</li>
+    <li>get the daily highs and lows of your clan</li>
+    <li>get monthly statistics of your clan’s happiness and activity.</li>
+  </ul>
+
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
   <a href=""
@@ -46,7 +56,7 @@
 		text-align:center;
 		font-weight: 400;
 		text-decoration:none;
-		-webkit-text-size-adjust:none;">Join { .clanname }</a>
+		-webkit-text-size-adjust:none;">Go to {{ .projectName }}</a>
   </div>
   <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size:10px;
@@ -55,6 +65,6 @@
   color:#333233;
   width: 500px;
   font-weight: 400;" align="center">
-  You can grow your clan and test out Clanbeat 30 days for free. To continue your subscription <u><font color="#6D5BBC">click here.</font></u>
+  You can grow your clan and test out Clanbeat 30 days for free. To continue your subscription <a href="{{ .subscriptionLink }}" style="color:#6D5BBC;">click here.</a>
 </div>
 {{ end }}
