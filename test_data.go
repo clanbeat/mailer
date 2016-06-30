@@ -110,7 +110,20 @@ var testData = map[string][]byte{
 				"value": 5,
 				"jobTitle": "Front End Master",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145942953651036900117"
-			}]
+			}],
+			"reviews": [{
+				"username": "Janika Liiv",
+				"date": "12. March",
+				"jobTitle": "Developer",
+				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
+			},
+			{
+				"username": "Janika Liiv",
+				"date": "12. March",
+				"jobTitle": "Developer",
+				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
+			}],
+			"oneOnOneLink": "https://beta.clanbeat.com/oneonone"
 		}`),
 	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
 }
