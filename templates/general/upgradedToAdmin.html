@@ -27,11 +27,11 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-Hi, { .firstname}.<br>
+Hi, {{ .firstName }}.<br>
 You have been upgraded to administrator! This means new features are unlocked – you can now lead 1-on-1s and manage your clan. Go see yourself what’s new.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href=""
+  <a href="{{ .link }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -41,8 +41,8 @@ You have been upgraded to administrator! This means new features are unlocked �
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size:23px;
 		line-height:45px;
-		text-align:center; 
-		font-weight: 400; 
+		text-align:center;
+		font-weight: 400;
 		text-decoration:none;
 		-webkit-text-size-adjust:none;">Go to Clanbeat</a>
   </div>
