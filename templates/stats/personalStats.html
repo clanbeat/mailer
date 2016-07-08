@@ -22,7 +22,7 @@
       </tr>
     </table>
     <div>
-      Your clan had <span style="color:#7ed220;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
+      You had <span style="color:#7ed220;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
       and <span style="color:#f8503b;">{{ .totals.lowsPercentage }}% lows</span> ({{ .totals.lowsCount }} posts).
       <br />
       That’s {{ lessOrMore .totals.highsDelta }} highs
@@ -56,6 +56,7 @@
     Looking great! Keep up the good work! <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/party.png"  />
   </div>
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+  {{ if .reviews }}
   <div style="text-align:center;">
     <h2>Upcoming 1-on-1s <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/handsup.png"  /></h2>
     <table style="width:100%;margin-top:30px;">
@@ -66,16 +67,11 @@
         <tr style="height:70px;">
           <td style="text-align:right;font-weight:bold;">{{ $item.date }}</td>
           <td style="width:70px;">
-            <div style="margin:0 25px;width:50px;height:50px;border-radius:50%;margin-right:20px;background-image:url('{{ $item.picture }}');background-size: cover;background-position:center center;background-repeat: no-repeat;"></div>
+            <div style="background-size:cover;width:50px;height: 50px;border-radius:50%;margin-right:20px;margin-left:20px;background: url('{{ $item.picture }}') no-repeat center / cover;"></div>
           </td>
-          <td style="text-align:left;">
+          <td style="text-align:left;width:50%;">
             <div style="font-weight:bold;">{{ $item.username }}</div>
             <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
-          </td>
-          <td>
-            <a href="{{ $item.link }}" style="margin-left: 20px;padding: 15px 15px 15px 15px;width:100px;height:50px;border-radius:6px;background-color:#7058c1;color:white;text-decoration:none;">
-              Go prepare
-            </a>
           </td>
         </tr>
 
@@ -83,5 +79,11 @@
     </table>
   </div>
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+  <div style="margin: 40px auto 40px auto;text-align: center;">
+    <a href="{{ .oneOnOneLink }}" target="_blank" style="margin:20px;padding: 15px 90px;width:100px;height:50px;border-radius:6px;background-color:#7058c1;color:white;text-decoration:none;">
+      Go prepare
+    </a>
+  </div>
+  {{ end }}
 </div>
 {{ end }}

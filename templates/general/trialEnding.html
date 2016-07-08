@@ -28,13 +28,13 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-	Hi, { .firstname}.<br><br>
+	Hi, {{ .username }}.<br><br>
 Your free month with Clanbeat is ending soon, too soon.
 You have 7 days left to use Clanbeat for free. Subscribe now to keep using Clanbeat
 and having meaningful 1-on-1s.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href=""
+  <a href="{{ .subscribeLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -49,4 +49,4 @@ and having meaningful 1-on-1s.
 		text-decoration:none;
 		-webkit-text-size-adjust:none;">Subscribe</a>
   </div>
-  {{ end }}
+{{ end }}
