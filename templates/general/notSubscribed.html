@@ -28,11 +28,11 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, { .firstname}.
-Your clan { .clanname} free trial has ended and you haven’t subscribed yet. No worries, you can still access all the information in the read-only mode. To keep using Clanbeat with all it’s benefits it’s time to subscribe. Trust us, it’s the best decision one can make.
+  Hi, {{ .firstName }}.
+Your clan {{ .projectName }} free trial has ended and you haven’t subscribed yet. No worries, you can still access all the information in the read-only mode. To keep using Clanbeat with all it’s benefits it’s time to subscribe. Trust us, it’s the best decision one can make.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
-  <a href="{{ .buttonLink }}"
+  <a href="{{ .link }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
