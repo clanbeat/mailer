@@ -116,6 +116,7 @@
     {{ end }}
     </div>
     <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
+    {{ if (or .reviews .needReviews)}}
     <div style="text-align:center;">
       <h2>Upcoming 1-on-1s <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/handsup.png"  /></h2>
       {{ if .reviews }}
@@ -153,7 +154,7 @@
       </a>
     </div>
     <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
-
+    {{ end }}
   </div>
 </div>
 {{ end }}
