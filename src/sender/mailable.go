@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"html/template"
 	"math"
+	"strings"
 )
 
 type Mailable struct {
@@ -22,6 +23,7 @@ var funcMap = template.FuncMap{
 	"hasMiddle":          hasMiddle,
 	"colorForList":       colorForList,
 	"lessOrMore":         lessOrMore,
+	"needReviewsList":    needReviewsList,
 }
 
 func addReviewSeparator(i int) bool {
@@ -30,6 +32,25 @@ func addReviewSeparator(i int) bool {
 
 func hasMiddle(s int, max int) bool {
 	return s == max
+}
+
+func needReviewsList(names []interface{}) string {
+	ns := []string{}
+	for _, n := range names {
+		if name, isString := n.(string); isString {
+			ns = append(ns, name)
+		}
+	}
+
+	if len(ns) > 3 {
+		return fmt.Sprintf("%s and %d more don't", strings.Join(ns[0:2], ", "), len(names)-2)
+	} else if len(ns) == 3 {
+		return fmt.Sprintf("%s, %s and %s don't", ns[0], ns[1], ns[2])
+	} else if len(ns) == 2 {
+		return fmt.Sprintf("%s and %s don't", ns[0], ns[1])
+	} else {
+		return fmt.Sprintf("%s doesn't", ns[0])
+	}
 }
 
 func isMiddle(i int, total int) bool {

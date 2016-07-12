@@ -114,10 +114,11 @@
         {{ end }}
       </table>
     {{ end }}
-    </div><div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
-    {{ if .reviews }}
+    </div>
+    <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
     <div style="text-align:center;">
       <h2>Upcoming 1-on-1s <img width="25px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/handsup.png"  /></h2>
+      {{ if .reviews }}
       <table style="width:100%;margin-top:30px;">
       {{ range $index, $item := .reviews }}
         {{ if addReviewSeparator $index }}
@@ -136,7 +137,16 @@
 
       {{ end }}
       </table>
+    {{ end }}
     </div>
+    {{ if .needReviews }}
+    <div style="border-bottom: 1px dashed #fcc331;"></div>
+    <div style="margin-top:40px;">
+      {{ needReviewsList .needReviews }}
+      have any 1-on-1s coming up. What a pity! It's time for a change and
+      scheduling some 1-on-1s would be a perfect start.
+    </div>
+    {{ end }}
     <div style="margin: 40px auto 40px auto;text-align: center;">
       <a href="{{ .oneOnOneLink }}" target="_blank" style="margin:20px;padding: 15px 90px;width:100px;height:50px;border-radius:6px;background-color:#7058c1;color:white;text-decoration:none;">
         Go prepare
@@ -144,6 +154,6 @@
     </div>
     <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
 
-    {{ end }}
+  </div>
 </div>
 {{ end }}

@@ -123,6 +123,7 @@ var testData = map[string][]byte{
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
+			"needReviews": ["Mari Maasikas", "Siim Susi", "Artur Alliksaar", "Marie Under"],
 			"oneOnOneLink": "https://beta.clanbeat.com/oneonone"
 		}`),
 	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
