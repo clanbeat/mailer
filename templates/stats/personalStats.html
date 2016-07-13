@@ -8,10 +8,6 @@
   <span style="font-size: 16px;color:#fd067d;">{{ .start }} - {{ .end }} </span>
 </div>
 <div class="body-text">
-  <div style="font-size:20px;line-height:24px;text-align:center;">
-    Hey, {{ .user.firstName }}! This is just a quick overview,
-    at the end of every month you'll receive one like this.
-  </div>
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
   <div style="text-align:center;">
     <h2>Mood Level</h2>
@@ -90,4 +86,7 @@
     <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
   </div>
 </div>
+<footer style="font-size:12px;text-align:center;padding-bottom:30px;">
+  This is just a quick overview, at the end of every month you'll receive one like this.
+</footer>
 {{ end }}
