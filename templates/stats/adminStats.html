@@ -4,14 +4,10 @@
   <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.jpg" style="height:25px;" height="25"/>
 </div>
 <div style="text-align:center;margin-bottom:50px;">
-  <h1 style="margin-bottom: 15px;">Your monthly summary</h1>
+  <h1 style="margin-bottom: 15px;">Monthly summary for {{ .projectName }}</h1>
   <span style="font-size: 16px;color:#fd067d;">{{ .start }} - {{ .end }} </span>
 </div>
 <div class="body-text">
-  <div style="font-size:20px;line-height:24px;text-align:center;">
-    Hey, {{ .user.firstName }}! This is just a quick overview,
-    at the end of every month you'll receive one like this.
-  </div>
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
   <div style="text-align:center;">
     <h2>Mood Level</h2>
@@ -159,4 +155,8 @@
     {{ end }}
   </div>
 </div>
+<footer style="font-size:14px;text-align:center;padding-bottom:30px;">
+  This is just a quick overview, at the end of every month you'll receive one like this.
+</footer>
+
 {{ end }}

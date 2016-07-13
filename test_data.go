@@ -44,6 +44,7 @@ var testData = map[string][]byte{
 	"adminStats": []byte(`{
 			"start": "1. March",
 			"end": "31. March",
+			"projectName": "Clanbeat OÜ",
 			"user": {
 				"firstName": "Gloria"
 			},
