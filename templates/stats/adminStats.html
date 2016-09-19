@@ -11,39 +11,39 @@
   <div style="margin: 30px 0 20px 0;height:18px;background:url('https://s3.eu-central-1.amazonaws.com/clanbeat-emails/line.jpg') repeat-x top / auto 10px"></div>
   <div style="text-align:center;">
     <h2>Mood Level</h2>
-    <table width="100%" style="width:100%!important;margin-top:25px;margin-bottom:25px;">
+    <table style="width:100%;margin-top:25px;margin-bottom:25px;">
       <tr>
-        <td style="border:none;height:15px;background-color:#f8503b;border-radius:3px 0 0 3px;width:{{ .totals.lowsPercentage }}%;"></td>
-        <td style="border:none;height:15px;background-color:#7ed220;border-radius:0 3px 3px 0;width:{{ .totals.highsPercentage }}%;"></td>
+        <td style="height:15px;background-color:#f8503a;border-radius:10px 0 0 10px;width:{{ .totals.lowsPercentage }}%;"></td>
+        <td style="height:15px;background-color:#00bd54;border-radius:0 10px 10px 0;width:{{ .totals.highsPercentage }}%;"></td>
       </tr>
     </table>
     <div >
-      Your clan had <span style="color:#7ed220;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
-      and <span style="color:#f8503b;">{{ .totals.lowsPercentage }}% lows</span> ({{ .totals.lowsCount }} posts).
+      Your clan had <span style="color:#7ed220;font-weight:bold;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
+      and <span style="color:#f8503b;font-weight:bold;">{{ .totals.lowsPercentage }}% lows</span> ({{ .totals.lowsCount }} posts).
       <br />
       That’s {{ lessOrMore .totals.highsDelta }} highs
       and {{ lessOrMore .totals.lowsDelta }} lows than previous month.
     </div>
   </div>
   <div class="totals" style="text-align:center;">
-    <table style="margin:25px 0 25px 0;padding:20px 0 20px 0;margin-bottom:25px;width:100%;border-top:1px dashed #7058c1;border-bottom:1px dashed #7058c1;">
-      <tr>
+    <table style="text-align:center;margin:25px 0 25px 0;padding:20px 0 20px 0;margin-bottom:25px;width:100%;border-top:1px dashed #bdbdbd;border-bottom:1px dashed #bdbdbd;">
+      <tr style="color:#333233;font-size:16px;height:30px;">
         <td>Total posts</td>
         <td>Public posts</td>
         <td>Private posts</td>
       </tr>
-      <tr style="color:#fd067d;">
+      <tr style="color:#fd067d;font-size:23px;height:30px;">
         <td>
           {{ .totals.moods }}
-          <span style="color:#1DAEE8;font-size:12px;">({{ .totals.moodsDelta }} posts)</span>
+          <span style="color:#826bd0;font-size:12px;">({{ upOrDown .totals.moodsDelta }})</span>
         </td>
         <td>
           {{ .totals.publicMoods }}
-          <span style="color:#1DAEE8;font-size:12px;">({{ .totals.publicDelta }} posts)</span>
+          <span style="color:#826bd0;font-size:12px;">({{ upOrDown .totals.publicDelta }})</span>
         </td>
         <td>
           {{ .totals.privateMoods }}
-          <span style="color:#1DAEE8;font-size:12px;">({{ .totals.privateDelta }} posts)</span>
+          <span style="color:#826bd0;font-size:12px;">({{ upOrDown .totals.privateDelta }})</span>
         </td>
       </tr>
     </table>
@@ -147,7 +147,7 @@
     </div>
     {{ end }}
     <div style="margin: 40px auto 40px auto;text-align: center;">
-      <a href="{{ .oneOnOneLink }}" target="_blank" style="margin:20px;padding: 15px 90px;width:100px;height:50px;border-radius:6px;background-color:#7058c1;color:white;text-decoration:none;">
+      <a href="{{ .oneOnOneLink }}" target="_blank" style="margin:20px;padding: 15px 90px;width:100px;height:50px;border-radius:100px;background-color:#00bd54;color:white;text-decoration:none;">
         Go to 1-on-1s
       </a>
     </div>

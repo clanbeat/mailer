@@ -24,6 +24,7 @@ var funcMap = template.FuncMap{
 	"colorForList":       colorForList,
 	"lessOrMore":         lessOrMore,
 	"needReviewsList":    needReviewsList,
+	"upOrDown":           upOrDown,
 }
 
 func addReviewSeparator(i int) bool {
@@ -65,6 +66,13 @@ func colorForList(i int, hasMiddle bool) string {
 		return green
 	}
 	return red
+}
+
+func upOrDown(d float64) string {
+	if d > 0 {
+		return fmt.Sprintf("up by %d", int64(d))
+	}
+	return fmt.Sprintf("down by %d", int64(math.Abs(d)))
 }
 
 func lessOrMore(d float64) string {
