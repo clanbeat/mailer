@@ -18,7 +18,7 @@
       </tr>
     </table>
     <div >
-      Your clan had <span style="color:#7ed220;font-weight:bold;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
+      Your clan had <span style="color:#00bd54;font-weight:bold;">{{ .totals.highsPercentage }}% highs</span> ({{ .totals.highsCount }} posts)
       and <span style="color:#f8503b;font-weight:bold;">{{ .totals.lowsPercentage }}% lows</span> ({{ .totals.lowsCount }} posts).
       <br />
       That’s {{ lessOrMore .totals.highsDelta }} highs
@@ -73,7 +73,7 @@
               <div style="font-size:14px;font-weight:regular;">{{ $item.jobTitle }}</div>
             </td>
             {{ with $color := colorForList $index (hasMiddle (len $items) 6) }}
-              <td style="color:#7ed220;text-align:right;color:{{$color}};">{{ $item.value }}%</td>
+              <td style="color:#00bd54;text-align:right;color:{{$color}};">{{ $item.value }}%</td>
             {{ end }}
           <tr>
           {{ end }}

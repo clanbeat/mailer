@@ -59,7 +59,7 @@ func isMiddle(i int, total int) bool {
 }
 
 func colorForList(i int, hasMiddle bool) string {
-	green := "#7ed220"
+	green := "#00bd54"
 	red := "#f8503b"
 
 	if !hasMiddle || i < 3 {
