@@ -1,0 +1,43 @@
+{{ define "content" }}
+<div style="padding-bottom: 15px;
+  padding-top: 50px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:40px;
+  line-height:40px;
+  text-align:left;
+  color:#333233;
+  width: 400px;
+  font-weight: 600;">
+Your magic login link!
+ </div>
+ <div style="padding-bottom: 50px;
+   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+   font-size:16px;
+   line-height:40px;
+   text-align:left;
+   color:#FD067D;
+   width: 400px;
+   font-weight: 400;">
+ Follow the white rabbit...
+ </div>
+<div style="text-align:center; padding-bottom: 50px;">
+  <a href="{{ .link }}"
+    style="padding-left:30px;
+      padding-right:30px;
+    background-color:#6D5BBC;
+    border-radius:8px;
+    color:#ffffff;
+    display:inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:23px;
+    line-height:45px;
+    text-align:center;
+    font-weight: 400;
+    text-decoration:none;
+    cursor:pointer;
+    -webkit-text-size-adjust:none;">
+    Log in to Clanbeat
+  </a>
+</div>
+
+{{ end }}

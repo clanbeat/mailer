@@ -23,6 +23,7 @@ Links to email templates
  * [personal statistics email](http://clanbeat-mailer-staging.herokuapp.com/emails/personalStats)
 
 ##Other
+ * [Email log in link](http://clanbeat-mailer-staging.herokuapp.com/emails/loginLink)
  * [User has been deactivated](http://clanbeat-mailer-staging.herokuapp.com/emails/deactivated)
  * [Employee needs to prepare](http://clanbeat-mailer-staging.herokuapp.com/emails/employeePrepare)
  * [Manager requested a 1-on-1 with employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeRequest)
