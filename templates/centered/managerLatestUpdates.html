@@ -1,0 +1,92 @@
+{{ define "content" }}
+<div style="padding-bottom: 15px;
+  padding-top: 50px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:40px;
+  line-height:40px;
+  text-align:center;
+  color:#333233;
+  font-weight: 600;">
+  3 posts already but no 1-on-1!
+ </div>
+<div style="padding-bottom: 40px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:16px;
+  line-height:40px;
+  text-align:center;
+  color:#FD067D;
+  font-weight: 400;">
+  {{ .user.firstName }} needs your attention!
+</div>
+<div style="background-size:cover;
+  text-align:center;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background: url('{{ .user.picture }}') no-repeat center / cover;">
+</div>
+
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 17px;line-height: 22px;padding:5px;">
+  <a href="{{ .user.profileLink }}" style="text-decoration:none;color: #7058c1;">
+    {{ .user.firstName }} {{ .user.lastName }}
+  </a>
+</div>
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: #888888;
+  font-size: 14px;
+  padding-bottom:40px;">
+  {{ .user.jobTitle }} since {{ .user.createdAt }}
+</div>
+
+{{ with $items := .moods }}
+  {{ range $index, $item := $items }}
+  <table style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: left">
+    <tr>
+      <td style="background-color: #f5f5f5;
+        text-align:left;
+        color: #939393;
+        padding: 5px 10px;
+        border-radius: 6px 6px 0px 0px;
+        display:inline-block;">
+        {{ $item.createdAt }}
+      </td>
+    </tr>
+    <tr style="background-color: #f5f5f5;">
+      <td colspan="2" style="padding:20px;border-radius: 0px 6px 6px 6px;">
+        {{ with $color := colorForMood $item.score }}
+        <div style="border-left: 2px solid {{ $color }};
+          text-align: left;
+          padding-left: 20px;">
+          {{ $item.message }}
+        </div>
+        {{ end }}
+      </td>
+      <td style="vertical-align: top;">
+        {{ with $title := titleForMood $item.score }}
+        <img style="padding-top: 20px;margin-right: -5px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/{{ $title }}.png" height="25px"/>
+        {{ end }}
+      </td>
+    </tr>
+  </table>
+  {{ end }}
+{{ end }}
+<div style="text-align:center; padding-bottom: 50px;padding-top:50px;">
+  <a href="{{ .buttonLink }}"
+    style="padding-left:30px;
+	    padding-right:30px;
+		background-color:#6D5BBC;
+		border-radius:23px;
+		color:#ffffff;
+		display:inline-block;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size:23px;
+		line-height:45px;
+		text-align:center;
+		font-weight: 400;
+		text-decoration:none;
+		-webkit-text-size-adjust:none;">Book a 1-on-1 </a>
+</div>
+{{ end }}

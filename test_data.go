@@ -128,4 +128,33 @@ var testData = map[string][]byte{
 			"oneOnOneLink": "https://beta.clanbeat.com/oneonone"
 		}`),
 	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
+	"managerLatestUpdates": []byte(`{
+		"user": {
+			"firstName": "Janika",
+			"lastName": "Liiv",
+			"userName": "Janika Liiv",
+			"jobTitle": "Back End developer",
+			"createdAt": "Sept 2016",
+			"picture":"https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518",
+			"profileLink": "https://beta.clanbeat.com/profile/18"
+		},
+		"buttonLink": "https://beta.clanbeat.com/oneonone",
+		"moods": [
+			{
+				"createdAt": "Tuesday, 08. November",
+				"score": 1,
+				"message": "We finally got up some 1-on-1 flow changes, that give me opportunity to urge our users to write more stuff down while preparing. Super."
+			},
+			{
+				"createdAt": "Tuesday, 08. November",
+				"score": 4,
+				"message": "Got email from Rocket Internet (Berlin event followup). This can be a total game changer for Clanbeat. BIG TIME -----  For the demo I believe I will ask for it at the beginning of January 17, We are working now on restructuring the company and scaling up, appraisals and one on one will be at the core of this restructuring."
+			},
+			{
+				"createdAt": "Tuesday, 08. November",
+				"score": 6,
+				"message": "Vilnius Airport is more like pointless bus-station. Flight delays seems rule here."
+			}
+		]
+	}`),
 }

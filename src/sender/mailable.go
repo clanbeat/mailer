@@ -25,10 +25,50 @@ var funcMap = template.FuncMap{
 	"lessOrMore":         lessOrMore,
 	"needReviewsList":    needReviewsList,
 	"upOrDown":           upOrDown,
+	"colorForMood":       colorForMood,
+	"titleForMood":       titleForMood,
 }
 
 func addReviewSeparator(i int) bool {
 	return i != 0
+}
+
+func colorForMood(score float64) string {
+	s := int64(score)
+	switch s {
+	case 1:
+		return "#B62839"
+	case 2:
+		return "#EA393E"
+	case 3:
+		return "#FF5F60"
+	case 4:
+		return "#68CD00"
+	case 5:
+		return "#59AE00"
+	case 6:
+		return "#007D32"
+	default:
+		return ""
+	}
+}
+
+func titleForMood(score float64) string {
+	s := int64(score)
+	switch s {
+	case 1:
+		return "terrible"
+	case 2:
+		return "bad"
+	case 3:
+		return "meh"
+	case 4:
+		return "alright"
+	case 5:
+		return "good"
+	default:
+		return "super"
+	}
 }
 
 func hasMiddle(s int, max int) bool {
