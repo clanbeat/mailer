@@ -7,7 +7,7 @@
   text-align:center;
   color:#333233;
   font-weight: 600;">
-  3 posts already but no 1-on-1!
+  3 posts already but no <span style="white-space: nowrap;">1-on-1!</span>
  </div>
 <div style="padding-bottom: 40px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -54,22 +54,27 @@
         {{ $item.createdAt }}
       </td>
     </tr>
+    {{ with $color := colorForMood $item.score }}
     <tr style="background-color: #f5f5f5;">
-      <td colspan="2" style="padding:20px;border-radius: 0px 6px 6px 6px;">
-        {{ with $color := colorForMood $item.score }}
-        <div style="border-left: 2px solid {{ $color }};
-          text-align: left;
-          padding-left: 20px;">
-          {{ $item.message }}
+      <td style="padding: 20px 0px 0px 20px;vertical-align: top;text-align: right;border-radius: 6px 6px 0px 0;">
+        <div style="border-left: 2px solid {{ $color }};">
+          {{ with $title := titleForMood $item.score }}
+          <img style="padding-bottom: 20px;margin-right: -5px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/{{ $title }}.png" height="25px"/>
+          {{ end }}
         </div>
-        {{ end }}
-      </td>
-      <td style="vertical-align: top;">
-        {{ with $title := titleForMood $item.score }}
-        <img style="padding-top: 20px;margin-right: -5px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/{{ $title }}.png" height="25px"/>
-        {{ end }}
       </td>
     </tr>
+    <tr style="background-color: #f5f5f5;">
+      <td style="padding: 0px 20px 20px 20px;border-radius: 0 0 6px 6px;">
+        <div style="border-left: 2px solid {{ $color }};
+          text-align: left;
+          padding-left: 20px;
+          font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;">
+          {{ $item.message }}
+        </div>
+      </td>
+    </tr>
+    {{ end }}
   </table>
   {{ end }}
 {{ end }}
