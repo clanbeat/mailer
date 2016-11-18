@@ -44,28 +44,24 @@
     font-size: 16px;
     margin-bottom: 20px;
     text-align: left">
-    <tr>
-      <td style="background-color: #f5f5f5;
-        text-align:left;
+    {{ with $color := colorForMood $item.score }}
+    <tr style="background-color: #f5f5f5;">
+      <td style="text-align:left;
         color: #939393;
-        padding: 5px 10px;
+        padding: 10px 10px;
         border-radius: 6px 6px 0px 0px;
         display:inline-block;">
         {{ $item.createdAt }}
       </td>
-    </tr>
-    {{ with $color := colorForMood $item.score }}
-    <tr style="background-color: #f5f5f5;">
-      <td style="padding: 20px 0px 0px 20px;vertical-align: top;text-align: right;border-radius: 0px 6px 0px 0px;">
-        <div style="border-left: 2px solid {{ $color }};">
+      <td style="padding: 10px 0px;vertical-align: top;text-align: right;border-radius: 0px 6px 0px 0px;">
           {{ with $title := titleForMood $item.score }}
-          <img style="padding-bottom: 20px;margin-right: -5px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/{{ $title }}.png" height="25px"/>
+          <img style="margin-right: -5px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/{{ $title }}.png" height="25px"/>
           {{ end }}
-        </div>
       </td>
     </tr>
+
     <tr style="background-color: #f5f5f5;">
-      <td style="padding: 0px 20px 20px 20px;border-radius: 0 0 6px 6px;">
+      <td colspan="2" style="padding: 20px;border-radius: 0 0 6px 6px;">
         <div style="border-left: 2px solid {{ $color }};
           text-align: left;
           padding-left: 20px;
