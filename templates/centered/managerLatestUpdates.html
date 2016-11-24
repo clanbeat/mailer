@@ -38,19 +38,18 @@
   {{ .user.jobTitle }} since {{ .user.createdAt }}
 </div>
 
+<table style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: left">
 {{ with $items := .moods }}
   {{ range $index, $item := $items }}
-  <table style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: left">
     {{ with $color := colorForMood $item.score }}
     <tr style="background-color: #f5f5f5;">
       <td style="text-align:left;
         color: #939393;
         padding: 10px 10px;
-        border-radius: 6px 6px 0px 0px;
-        display:inline-block;">
+        border-radius: 6px 0px 0px 0px;">
         {{ $item.createdAt }}
       </td>
       <td style="padding: 10px 0px;vertical-align: top;text-align: right;border-radius: 0px 6px 0px 0px;">
@@ -70,10 +69,13 @@
         </div>
       </td>
     </tr>
+    <tr>
+      <td colspan="2" style="height:20px;"></td>
+    </tr>
     {{ end }}
-  </table>
   {{ end }}
 {{ end }}
+</table>
 <div style="text-align:center; padding-bottom: 50px;padding-top:50px;">
   <a href="{{ .buttonLink }}"
     style="padding-left:30px;
