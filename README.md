@@ -23,6 +23,7 @@ Links to email templates
  * [personal statistics email](http://clanbeat-mailer-staging.herokuapp.com/emails/personalStats)
 
 ##Other
+ * [Teams email ](http://clanbeat-mailer-staging.herokuapp.com/emails/teams)
  * [Latest updates to Employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeLatestUpdates)
  * [Latest updates to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/managerLatestUpdates)
  * [Email log in link](http://clanbeat-mailer-staging.herokuapp.com/emails/loginLink)
