@@ -1,0 +1,74 @@
+{{ define "content" }}
+<div style="padding-bottom: 15px;
+  padding-top: 50px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:40px;
+  line-height:40px;
+  text-align:left;
+  color:#333233;
+  width: 400px;
+  font-weight: 600;">
+  Time to get more organized!
+</div>
+<div style="padding-bottom: 50px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:16px;
+  line-height:40px;
+  text-align:left;
+  color:#FD067D;
+  width: 400px;
+  font-weight: 400;">
+  Form your own A-team!
+</div>
+<div style="padding-bottom: 30px;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:20px;
+  line-height:25px;
+  text-align:left;
+  color:#333233;
+  width: 500px;
+  font-weight: 400;">
+  Hi, {{ .username }}. Your clan is growing, isn't that nice! Filter your
+  people into teams by different functions, locations or whatever you like.
+  You can then filter the home feed by those teams and get better overview
+  on what is going on in each one of them.
+</div>
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align:center;
+  padding-top:30px;
+  color:#979797;">
+  <img style="width:100%;position:relative;" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/teams_demo.png" />
+  <p style="margin-top: 30px;">That's pretty much it.</p>
+</div>
+<div style="text-align:center;margin-bottom:40px;">
+  <a href="{{ .buttonLink }}"
+    style="padding-left:30px;
+	    padding-right:30px;
+		background-color:#6D5BBC;
+		border-radius:23px;
+		color:#ffffff;
+		display:inline-block;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size:23px;
+		line-height:45px;
+		text-align:center;
+		font-weight: 400;
+		text-decoration:none;
+		-webkit-text-size-adjust:none;">Get started with teams</a>
+</div>
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:10px;
+  line-height:15px;
+  text-align:center;
+  color:#333233;
+  width: 500px;
+  font-weight: 400;" align="center">
+  <p>
+    NB! this feature enables you to filter in or out specific teams in the home feed.
+    Everyone can still see each others' public posts, doesn't matter in which teams they are.
+    Transparency for the win!
+  </p>
+</div>
+{{ end }}
