@@ -1,6 +1,18 @@
 package main
 
 var testData = map[string][]byte{
+	"demoRequest": []byte(`
+		{
+		  "email": "someone@somemail.com",
+		  "name": "John Doe",
+		  "phoneNumber": "+12313132",
+			"company": "Testing Company",
+		  "jobTitle": "Team Lead",
+		  "teamSize": "2-20",
+		  "comments": "some free form text",
+		  "location": "London, UK"
+		}
+	`),
 	"invitation": []byte(`{
     "inviterName": "Gloria Paul",
     "projectName": "Vikings"

@@ -12,6 +12,18 @@
   Great news!<br /><br />
 
   <strong>{{ .email }}</strong> wants to have a Clanbeat demo!<br />
+  <br />
+  <br />
+    <div> Here is some additional info if the user added it:</div>
+    <table>
+      <tr><td style="font-weight:bold;padding-right:10px;" style="font-weight:bold;padding-right:10px;">Name</td><td>{{ .name }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">phone number</td><td> {{ .phoneNumber }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">job title</td><td> {{ .jobTitle }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">company</td><td> {{ .company }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">team size</td><td> {{ .teamSize }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">location</td><td> {{ .location }}</td></tr>
+      <tr><td style="font-weight:bold;padding-right:10px;">comments</td><td> {{ .comments }}</td></tr>
+    </table>
   <br /><br />
 </div>
 {{ end }}
