@@ -1,4 +1,5 @@
 #Mailer
+
 Sends out emails
 
 connections
@@ -15,6 +16,7 @@ connections
   * SENDGRID_PASSWORD - secret for using sendgrid
 
 # Templates
+
 Links to email templates
 
 ## Statistics
@@ -23,6 +25,7 @@ Links to email templates
  * [personal statistics email](http://clanbeat-mailer-staging.herokuapp.com/emails/personalStats)
 
 ## Other
+
  * [Teams email ](http://clanbeat-mailer-staging.herokuapp.com/emails/teams)
  * [Latest updates to Employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeLatestUpdates)
  * [Latest updates to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/managerLatestUpdates)

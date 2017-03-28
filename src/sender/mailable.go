@@ -27,6 +27,8 @@ var funcMap = template.FuncMap{
 	"upOrDown":           upOrDown,
 	"colorForMood":       colorForMood,
 	"titleForMood":       titleForMood,
+	"checkBoxImage":      checkBoxImage,
+	"categoryImage":      categoryImage,
 }
 
 func addReviewSeparator(i int) bool {
@@ -69,6 +71,23 @@ func titleForMood(score float64) string {
 	default:
 		return "super"
 	}
+}
+
+func categoryImage(cat string) string {
+	if cat == "work" {
+		return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/work.png"
+	} else if cat == "skill" {
+		return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/skill.png"
+	}
+	return ""
+}
+
+func checkBoxImage(status float64) string {
+	s := int64(status)
+	if s == 0 {
+		return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/uncheck.png"
+	}
+	return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/checked.png"
 }
 
 func hasMiddle(s int, max int) bool {
