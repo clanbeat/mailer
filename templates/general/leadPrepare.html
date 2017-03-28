@@ -33,25 +33,11 @@
   To get the most out the meeting, take a moment to prepare: check out their highs and lows,
   make some notes for most important discussion points, and have a final look at your goals.
   {{ if .goals }}
-    {{ with $items := .goals }}
-    <table border="0" width="100%" height="100%" style="margin-top:40px;">
-      {{ range $index, $item := $items }}
-          <tr style="padding: 20px;">
-            <td  align="right" valign="top" style="padding:5px 15px 0 10px;vertical-align:top;">
-              <a href="{{ .buttonLink }}">
-                <img src="{{ checkBoxImage $item.status }}" />
-              </a>
-            </td>
-            <td align="left" valign="top" style="vertical-align:top;padding-bottom: 20px;">
-              <a style="text-decoration:none;color:#333233;" href="{{ .buttonLink }}">
-                {{ $item.content }} <br /> <span style="color:#bdbdbd;">with {{ $item.partnerName }}</span>
-              </a>
-            </td>
-            <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;"><img src="{{ categoryImage $item.category }}" /></td>
-          </tr>
-      {{ end }}
-    </table>
+  <table border="0" width="100%" height="100%" style="margin-top:40px;">
+    {{ range .goals }}
+      {{ template "goalsList" . }}
     {{ end }}
+  </table>
   {{ end }}
 </div>
   <div style="

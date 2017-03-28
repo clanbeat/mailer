@@ -1,3 +1,19 @@
+{{ define "goalsList" }}
+<tr style="padding: 20px;">
+  <td  align="right" valign="top" style="padding:5px 15px 0 10px;vertical-align:top;">
+    <a href="{{ .buttonLink }}" target="_blank">
+      <img src="{{ checkBoxImage .status }}" />
+    </a>
+  </td>
+  <td align="left" valign="top" style="vertical-align:top;padding-bottom: 20px;">
+    <a style="text-decoration:none;color:#333233;" href="{{ .buttonLink }}" target="_blank">
+      {{ .content }} <br /> <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
+    </a>
+  </td>
+  <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;"><img src="{{ categoryImage .category }}" /></td>
+</tr>
+{{ end }}
+
 {{ define "layout" }}
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">

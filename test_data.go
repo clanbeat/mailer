@@ -5,36 +5,42 @@ var testData = map[string][]byte{
 		{
 		  "username": "John Doe",
 		  "partnerName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
 			"goals": [
 				{
 					"status": 0,
 					"content": "finish reading a book",
 					"partnerName": "Mari Maasikas",
-					"category": "skill"
+					"category": "skill",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "work",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 0,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "manager"
+					"category": "manager",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 1,
 					"content": "Clean the table before going to vacation",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "work",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 1,
 					"content": "Find new assistant to Susie",
 					"partnerName": "Mart The Manager",
-					"category": "work"
+					"category": "work",
+					"buttonLink": "https://staging.clanbeat.com"
 				}
 			]
 		}
@@ -43,6 +49,7 @@ var testData = map[string][]byte{
 		{
 			"username": "Karl Suur",
 			"leadName": "John Doe",
+			"buttonLink": "https://staging.clanbeat.com",
 			"goals": [
 				{
 					"status": 0,
@@ -68,24 +75,28 @@ var testData = map[string][]byte{
 	"weeklyGoals": []byte(`
 		{
 			"username": "John Doe",
+			"buttonLink": "https://staging.clanbeat.com",
 			"goals": [
 				{
 					"status": 0,
 					"content": "finish reading a book",
 					"partnerName": "Mari Maasikas",
-					"category": "skill"
+					"category": "skill",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "work",
+					"buttonLink": "https://staging.clanbeat.com"
 				},
 				{
 					"status": 0,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "manager"
+					"category": "manager",
+					"buttonLink": "https://staging.clanbeat.com"
 				}
 			]
 		}
@@ -94,6 +105,7 @@ var testData = map[string][]byte{
 		{
 		  "username": "John Doe",
 		  "employeeName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
 			"goals": [
 				{
 					"status": 0,
