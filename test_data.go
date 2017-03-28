@@ -1,6 +1,44 @@
 package main
 
 var testData = map[string][]byte{
+	"oneWeekToReview": []byte(`
+		{
+		  "username": "John Doe",
+		  "partnerName": "Karl Suur",
+			"goals": [
+				{
+					"status": 0,
+					"content": "finish reading a book",
+					"partnerName": "Mari Maasikas",
+					"category": "skill"
+				},
+				{
+					"status": 1,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "work"
+				},
+				{
+					"status": 0,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "manager"
+				},
+				{
+					"status": 1,
+					"content": "Clean the table before going to vacation",
+					"partnerName": "Siim Susi",
+					"category": "work"
+				},
+				{
+					"status": 1,
+					"content": "Find new assistant to Susie",
+					"partnerName": "Mart The Manager",
+					"category": "work"
+				}
+			]
+		}
+	`),
 	"employeePrepare": []byte(`
 		{
 			"username": "Karl Suur",
