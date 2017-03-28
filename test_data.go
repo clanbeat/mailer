@@ -1,6 +1,31 @@
 package main
 
 var testData = map[string][]byte{
+	"weeklyGoals": []byte(`
+		{
+			"username": "John Doe",
+			"goals": [
+				{
+					"status": 0,
+					"content": "finish reading a book",
+					"partnerName": "Mari Maasikas",
+					"category": "skill"
+				},
+				{
+					"status": 1,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "work"
+				},
+				{
+					"status": 0,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "manager"
+				}
+			]
+		}
+	`),
 	"leadPrepare": []byte(`
 		{
 		  "username": "John Doe",

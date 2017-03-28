@@ -47,3 +47,4 @@ Links to email templates
  * [Unsubscribed](http://clanbeat-mailer-staging.herokuapp.com/emails/unsubscribed)
  * [User upgraded to Admin](http://clanbeat-mailer-staging.herokuapp.com/emails/upgradedToAdmin)
  * [User upgraded to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/upgradedToManager)
+ * [Weekly goals update](http://clanbeat-mailer-staging.herokuapp.com/emails/weeklyGoals)

@@ -8,7 +8,7 @@
   color:#333233;
   width: 400px;
   font-weight: 600;">
-  It’s 1-on-1 time!
+  Let’s kick off the new week!
  </div>
 <div style="padding-bottom: 50px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -28,12 +28,10 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, {{ .username }}. How exciting, your 1-on-1 with {{ .employeeName }} is already tomorrow!
-  <br />
-  To get the most out the meeting, take a moment to prepare: check out their highs and lows,
-  make some notes for most important discussion points, and have a final look at your goals.
-  {{ if .goals }}
-    {{ with $items := .goals }}
+  Hi, {{ .username }}.
+  Hope your weekend was great, and the beginning week will be even better!
+  Here’s an overview of your goals to stay on track:
+  {{ with $items := .goals }}
     <table border="0" width="100%" height="100%" style="margin-top:40px;">
       {{ range $index, $item := $items }}
           <tr style="padding: 20px;">
@@ -51,7 +49,6 @@
           </tr>
       {{ end }}
     </table>
-    {{ end }}
   {{ end }}
 </div>
   <div style="
@@ -62,7 +59,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #979797;
-  padding: 0 0 35px 0px;">Time to prepare!</div>
+  padding: 0 0 35px 0px;">Get cracking!</div>
   <a href="{{ .buttonLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
