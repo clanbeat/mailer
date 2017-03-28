@@ -14,15 +14,15 @@ connections
   * SENDGRID_USERNAME - username for using sendgrid
   * SENDGRID_PASSWORD - secret for using sendgrid
 
-#Templates
+# Templates
 Links to email templates
 
-##Statistics
+## Statistics
 
  * [admin statistics email](http://clanbeat-mailer-staging.herokuapp.com/emails/adminStats)
  * [personal statistics email](http://clanbeat-mailer-staging.herokuapp.com/emails/personalStats)
 
-##Other
+## Other
  * [Teams email ](http://clanbeat-mailer-staging.herokuapp.com/emails/teams)
  * [Latest updates to Employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeLatestUpdates)
  * [Latest updates to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/managerLatestUpdates)
