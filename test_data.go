@@ -11,36 +11,31 @@ var testData = map[string][]byte{
 					"status": 0,
 					"content": "finish reading a book",
 					"partnerName": "Mari Maasikas",
-					"category": "skill",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "skill"
 				},
 				{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "work"
 				},
 				{
 					"status": 0,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "manager",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "manager"
 				},
 				{
 					"status": 1,
 					"content": "Clean the table before going to vacation",
 					"partnerName": "Siim Susi",
-					"category": "work",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "work"
 				},
 				{
 					"status": 1,
 					"content": "Find new assistant to Susie",
 					"partnerName": "Mart The Manager",
-					"category": "work",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "work"
 				}
 			]
 		}
@@ -81,22 +76,19 @@ var testData = map[string][]byte{
 					"status": 0,
 					"content": "finish reading a book",
 					"partnerName": "Mari Maasikas",
-					"category": "skill",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "skill"
 				},
 				{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "work"
 				},
 				{
 					"status": 0,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "manager",
-					"buttonLink": "https://staging.clanbeat.com"
+					"category": "manager"
 				}
 			]
 		}

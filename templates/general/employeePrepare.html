@@ -32,11 +32,7 @@
   <br />
   Are your all set? This is your big moment to dig into topics important to you, so make sure to prepare! Pick out your loudest highs and lows, make notes, and have a final look at your goals.
   {{ if .goals }}
-  <table border="0" width="100%" height="100%" style="margin-top:40px;">
-    {{ range .goals }}
-      {{ template "goalsList" . }}
-    {{ end }}
-  </table>
+    {{ template "goalsList" . }}
   {{ end }}
 </div>
 <div style="text-align:center; padding-bottom: 50px;">
