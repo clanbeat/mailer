@@ -74,7 +74,7 @@ func titleForMood(score float64) string {
 }
 
 func categoryImage(cat string) string {
-	if cat == "work" {
+	if cat == "employee" {
 		return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/work.png"
 	} else if cat == "skill" {
 		return "https://s3.eu-central-1.amazonaws.com/clanbeat-emails/skill.png"
