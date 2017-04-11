@@ -17,7 +17,7 @@ var testData = map[string][]byte{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "employee"
 				},
 				{
 					"status": 0,
@@ -29,13 +29,13 @@ var testData = map[string][]byte{
 					"status": 1,
 					"content": "Clean the table before going to vacation",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "employee"
 				},
 				{
 					"status": 1,
-					"content": "Find new assistant to Susie",
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
 					"partnerName": "Mart The Manager",
-					"category": "work"
+					"category": "employee"
 				}
 			]
 		}
@@ -56,11 +56,11 @@ var testData = map[string][]byte{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "employee"
 				},
 				{
 					"status": 0,
-					"content": "Be more fun at the office",
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
 					"partnerName": "Siim Susi",
 					"category": "manager"
 				}
@@ -82,11 +82,11 @@ var testData = map[string][]byte{
 					"status": 1,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "employee"
 				},
 				{
 					"status": 0,
-					"content": "Be more fun at the office",
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
 					"partnerName": "Siim Susi",
 					"category": "manager"
 				}
@@ -107,9 +107,9 @@ var testData = map[string][]byte{
 				},
 				{
 					"status": 1,
-					"content": "Be more fun at the office",
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
 					"partnerName": "Siim Susi",
-					"category": "work"
+					"category": "employee"
 				},
 				{
 					"status": 0,

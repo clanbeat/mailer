@@ -1,5 +1,5 @@
 {{ define "goalsList" }}
-<table border="0" width="100%" height="100%" style="margin-top:40px;">
+<table border="0" height="100%" style="margin-top:40px;max-width:400px;min-width:300px;margin-left:auto;margin-right:auto;">
   {{ $link := .buttonLink}}
   {{ range .goals }}
     <tr style="padding: 20px;">
@@ -8,7 +8,7 @@
           <img src="{{ checkBoxImage .status }}" />
         </a>
       </td>
-      <td align="left" valign="top" style="vertical-align:top;padding-bottom: 20px;">
+      <td align="left" valign="top" style="vertical-align:top;line-height: 1.4;padding-bottom: 10px;font-size: 16px;">
         <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
           {{ .content }} <br /> <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
         </a>
