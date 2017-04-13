@@ -31,38 +31,77 @@
   Hi, {{ .username }}.
   Hope your weekend was great, and the beginning week will be even better!
   Here’s an overview of your goals to stay on track:
-  {{ template "goalsList" . }}
-</div>
+  {{ $link := .buttonLink}}
+
+  <br />
+  <br />
+  <table style="width:400px;">
+    {{ range .projectGoals }}
+    <tr style="padding-top: 40px;">
+      <td style="white-space: nowrap;width: 1%;">
+        <strong>{{ .name }}</strong>
+      </td>
+      <td style="width:100%;padding:15px;">
+        <div style="width:100%;
+        margin-top: 5px;
+        opacity: 0.5;
+        border: solid 1px #bdbdbd;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table border="0" height="100%" width="100%" style="margin: 20px 0px 40px 0px;max-width:400px;min-width:300px;margin-left:auto;margin-right:auto;">
+          {{ range .goals }}
+            <tr style="padding: 20px;">
+              <td  align="right" valign="top" style="padding:5px 15px 0 10px;vertical-align:top;">
+                <a href="{{ $link }}" target="_blank">
+                  <img src="{{ checkBoxImage .status }}" />
+                </a>
+              </td>
+              <td align="left" valign="top" style="vertical-align:top;line-height: 1.4;padding-bottom: 10px;font-size: 16px;">
+                <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
+                  {{ .content }} <br /> <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
+                </a>
+              </td>
+              <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;"><img src="{{ categoryImage .category }}" /></td>
+            </tr>
+          {{ end }}
+        </table>
+      </td>
+    </tr>
+    {{ end }}
+  </table>
+  </div>
   <div style="
-  text-align:center;
-  padding-bottom: 50px;">
-  <div style="
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #979797;
-  padding: 0 0 35px 0px;">Get cracking!</div>
-  <a href="{{ .buttonLink }}"
-    style="padding-left:30px;
-	    padding-right:30px;
-		background-color:#6D5BBC;
-		border-radius:23px;
-		color:#ffffff;
-		display:inline-block;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size:23px;
-		line-height:45px;
-		text-align:center;
-		font-weight: 400;
-		text-decoration:none;
-		-webkit-text-size-adjust:none;">Go to Clanbeat</a>
-  	</div>
-<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:10px;
-  line-height:5px;
-  text-align:center;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;" align="center">
+    text-align:center;
+    padding-bottom: 50px;">
+      <div style="
+      font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #979797;
+      padding: 0 0 35px 0px;">Get cracking!</div>
+      <a href="{{ .buttonLink }}" style="padding-left:30px;
+      padding-right:30px;
+  		background-color:#6D5BBC;
+  		border-radius:23px;
+  		color:#ffffff;
+  		display:inline-block;
+  		font-family: 'Source Sans Pro', sans-serif;
+  		font-size:23px;
+  		line-height:45px;
+  		text-align:center;
+  		font-weight: 400;
+  		text-decoration:none;
+  		-webkit-text-size-adjust:none;">Go to Clanbeat</a>
+  </div>
+  <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-size:10px;
+    line-height:5px;
+    text-align:center;
+    color:#333233;
+    width: 500px;
+    font-weight: 400;" align="center">
+  </div>
 </div>
 {{ end }}

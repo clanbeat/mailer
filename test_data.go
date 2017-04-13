@@ -71,24 +71,52 @@ var testData = map[string][]byte{
 		{
 			"username": "John Doe",
 			"buttonLink": "https://staging.clanbeat.com",
-			"goals": [
+			"projectGoals": [
 				{
-					"status": 0,
-					"content": "finish reading a book",
-					"partnerName": "Mari Maasikas",
-					"category": "skill"
+					"name" : "Team Clanbeaters",
+					"goals": [
+						{
+							"status": 1,
+							"content": "Be more fun at the office",
+							"partnerName": "Siim Susi",
+							"category": "employee"
+						},
+						{
+							"status": 0,
+							"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+							"partnerName": "Siim Susi",
+							"category": "manager"
+						},
+						{
+							"status": 0,
+							"content": "finish reading a book",
+							"partnerName": "Mari Maasikas",
+							"category": "skill"
+						}
+					]
 				},
 				{
-					"status": 1,
-					"content": "Be more fun at the office",
-					"partnerName": "Siim Susi",
-					"category": "employee"
-				},
-				{
-					"status": 0,
-					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
-					"partnerName": "Siim Susi",
-					"category": "manager"
+					"name" : "Wafflehouse",
+					"goals": [
+						{
+							"status": 0,
+							"content": "finish reading a book",
+							"partnerName": "Mari Maasikas",
+							"category": "skill"
+						},
+						{
+							"status": 1,
+							"content": "Be more fun at the office",
+							"partnerName": "Siim Susi",
+							"category": "employee"
+						},
+						{
+							"status": 0,
+							"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+							"partnerName": "Siim Susi",
+							"category": "manager"
+						}
+					]
 				}
 			]
 		}
