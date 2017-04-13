@@ -112,7 +112,7 @@ var testData = map[string][]byte{
 						},
 						{
 							"status": 0,
-							"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+							"content": "Find new assistant to Susie.",
 							"partnerName": "Siim Susi",
 							"category": "manager"
 						}
