@@ -29,7 +29,7 @@
   width: 500px;
   font-weight: 400;">
   Hi, {{ .username }}.
-  How exciting, your 1-on-1 with {{ .partnerName }} is happening in a week!
+  How exciting, your 1-on-1 with {{ .partnerName }} is happening in a week, on <span style="font-weight:bold;">{{ .scheduledAt }}</span>!
   If you want to get those goals sorted, it’s now or never!
   Why not have a look at them right now:
   {{ template "goalsList" . }}

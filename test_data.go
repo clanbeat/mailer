@@ -6,6 +6,7 @@ var testData = map[string][]byte{
 		  "username": "John Doe",
 		  "partnerName": "Karl Suur",
 			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM",
 			"goals": [
 				{
 					"status": 0,
@@ -148,6 +149,22 @@ var testData = map[string][]byte{
 			]
 		}
 	`),
+	"leadRequest": []byte(`
+		{
+		  "username": "John Doe",
+		  "employeeName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM"
+		}
+	`),
+	"employeeRequest": []byte(`
+		{
+		  "username": "John Doe",
+		  "leadName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM"
+		}
+	`),
 	"demoRequest": []byte(`
 		{
 		  "email": "someone@somemail.com",
@@ -279,7 +296,7 @@ var testData = map[string][]byte{
 			},
 			{
 				"username": "Janika Liiv",
-				"date": "12. March",
+				"date": "12. March 12:00PM",
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
