@@ -29,7 +29,6 @@
   width: 500px;
   font-weight: 400;">
   Hi, {{ .username }}. {{ .employeeName }} scheduled a 1-on-1 with you for
-  <br />
   <span style="font-weight:bold;text-align:center;width:100%;">{{ .scheduledAt }}.</span>
   You can already start with making notes about the things you want to cover.<br><br>
   Your notes will always be private so don’t hold back.
@@ -55,8 +54,7 @@
   font-size:16px;
   line-height:5px;
   text-align:center;
-  color:#979797;
   padding-bottom: 50px;
   font-weight: 400;" align="center">
-  <a style="" href="{{ .reviewsIndexLink }}">Go to Clanbeat</a>
+  <a style="color:#979797;" href="{{ .reviewsIndexLink }}">Go to Clanbeat</a>
 {{ end }}
