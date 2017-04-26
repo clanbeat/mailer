@@ -301,7 +301,7 @@ var testData = map[string][]byte{
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
 			"needReviews": ["Mari Maasikas", "Siim Susi", "Artur Alliksaar", "Marie Under"],
-			"oneOnOneLink": "https://beta.clanbeat.com/oneonone"
+			"oneOnOneLink": "https://beta.clanbeat.com"
 		}`),
 	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
 	"managerLatestUpdates": []byte(`{
@@ -314,7 +314,7 @@ var testData = map[string][]byte{
 			"picture":"https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518",
 			"profileLink": "https://beta.clanbeat.com/profile/18"
 		},
-		"buttonLink": "https://beta.clanbeat.com/oneonone",
+		"buttonLink": "https://beta.clanbeat.com",
 		"moods": [
 			{
 				"createdAt": "08. November",
@@ -342,7 +342,7 @@ var testData = map[string][]byte{
 			"picture":"https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518",
 			"profileLink": "https://beta.clanbeat.com/profile/18"
 		},
-		"buttonLink": "https://beta.clanbeat.com/oneonone",
+		"buttonLink": "https://beta.clanbeat.com",
 		"moods": [
 			{
 				"createdAt": "18. November",
