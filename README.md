@@ -35,6 +35,7 @@ Links to email templates
  * [Manager requested a 1-on-1 with employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeRequest)
  * [First login to clan creator](http://clanbeat-mailer-staging.herokuapp.com/emails/firstLogin)
  * [Invitation](http://clanbeat-mailer-staging.herokuapp.com/emails/invitation)
+ * [Invitation to manager or admin](http://clanbeat-mailer-staging.herokuapp.com/emails/invitationToManager)
  * [Invitation Accepted](http://clanbeat-mailer-staging.herokuapp.com/emails/invitationAccepted)
  * [Invitation Pending](http://clanbeat-mailer-staging.herokuapp.com/emails/invitationPending)
  * [Manager needs to prepare](http://clanbeat-mailer-staging.herokuapp.com/emails/leadPrepare)

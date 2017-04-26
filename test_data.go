@@ -181,6 +181,11 @@ var testData = map[string][]byte{
     "inviterName": "Gloria Paul",
     "projectName": "Vikings"
   }`),
+	"invitationToManager": []byte(`{
+    "inviterName": "Gloria Paul",
+    "projectName": "Vikings",
+		"userRole": "admin"
+  }`),
 	"personalStats": []byte(`{
 		"start": "1. March",
 		"end": "31. March",
