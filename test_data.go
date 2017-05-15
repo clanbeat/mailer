@@ -179,12 +179,24 @@ var testData = map[string][]byte{
 	`),
 	"invitation": []byte(`{
     "inviterName": "Gloria Paul",
-    "projectName": "Vikings"
+    "projectName": "Vikings",
+		"reviewData": {
+			"scheduledAt": "2. January at 3:04PM",
+			"projectId": 12,
+			"employeeId": 1,
+			"allDay": false
+		}
   }`),
 	"invitationToManager": []byte(`{
     "inviterName": "Gloria Paul",
     "projectName": "Vikings",
-		"userRole": "admin"
+		"userRole": "admin",
+		"reviewData": {
+			"scheduledAt": "2. January at 3:04PM",
+			"projectId": 12,
+			"employeeId": 1,
+			"allDay": false
+		}
   }`),
 	"personalStats": []byte(`{
 		"start": "1. March",
