@@ -30,18 +30,20 @@
   font-weight: 400;">
   Hi, {{ .username }}. {{ .employeeName }} scheduled a 1-on-1 with you for
   <span style="font-weight:bold;text-align:center;width:100%;">{{ .scheduledAt }}.</span>
-  You can already start with making notes about the things you want to cover.<br><br>
-  Your notes will always be private so don’t hold back.
-  Oh, and if the time set isn’t the best, you can reschedule it on 1-on-1 page.
+  You can already start with making notes about the things you want to cover.
+  <br />
+  <br />
+  If the time set isn’t the best, you can reschedule it on Clanbeat.
 </div>
 <div style="text-align:center; padding-bottom: 20px;">
   <a href="{{ .googleCalendarLink }}"
     style="padding-left:30px;
     padding-right:30px;
-    margin-bottom: 20px;
-    background-color:#6D5BBC;
+    margin-bottom: 10px;
+    color:#6D5BBC;
+    border: 1px solid #6D5BBC;
     border-radius:23px;
-    color:#ffffff;
+    background-color:#ffffff;
     display:inline-block;
     font-family: 'Source Sans Pro', sans-serif;
     font-size:23px;
@@ -49,13 +51,16 @@
     text-align:center;
     font-weight: 400;
     text-decoration:none;
+    width: 260px;
     -webkit-text-size-adjust:none;">Add to Google Calendar</a>
+    <br />
     <a href="{{ .outlookLink }}"
       style="padding-left:30px;
-        padding-right:30px;
-      background-color:#6D5BBC;
+      padding-right:30px;
+      color:#6D5BBC;
+      border: 1px solid #6D5BBC;
       border-radius:23px;
-      color:#ffffff;
+      background-color:#ffffff;
       display:inline-block;
       font-family: 'Source Sans Pro', sans-serif;
       font-size:23px;
@@ -63,6 +68,7 @@
       text-align:center;
       font-weight: 400;
       text-decoration:none;
+      width: 260px;
       -webkit-text-size-adjust:none;">Add to iCal/Outlook</a>
 </div>
 <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -71,5 +77,5 @@
   text-align:center;
   padding-bottom: 50px;
   font-weight: 400;" align="center">
-  <a style="color:#6D5BBC;" href="{{ .reviewsIndexLink }}">Go to Clanbeat</a>
+  <a style="color:#6D5BBC;" href="{{ .reviewsIndexLink }}">Go to Clanbeat to prepare</a>
 {{ end }}
