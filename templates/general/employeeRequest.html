@@ -35,29 +35,43 @@
   <br />
   If the time set isn’t the best, you can reschedule it on 1-on-1 view.
 </div>
-<div style="text-align:center; padding-bottom: 20px;">
-  <a href="{{ .googleCalendarLink }}"
+{{ if .invitationLink }}
+  <div style="text-align:center; padding-top: 20px;">
+  <a href="{{ .invitationLink }}"
     style="padding-left:30px;
-    padding-right:30px;
-    margin-bottom: 10px;
-    color:#6D5BBC;
-    border: 1px solid #6D5BBC;
+      padding-right:30px;
+    background-color:#6D5BBC;
     border-radius:23px;
-    background-color:#ffffff;
+    color:#ffffff;
     display:inline-block;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size:20px;
+    font-size:23px;
     line-height:45px;
     text-align:center;
     font-weight: 400;
     text-decoration:none;
-    width: 260px;
-    -webkit-text-size-adjust:none;">Add to Google Calendar</a>
-    <br />
-    <a href="{{ .outlookLink }}"
+    cursor:pointer;
+    -webkit-text-size-adjust:none;">Accept invitation</a>
+  </div>
+  <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    color: #aaaaaa;
+    font-size:16px;
+    line-height:5px;
+    text-align:center;
+    padding-bottom: 40px;
+    padding-top: 15px;
+    font-weight: 400;" align="center">
+    Add the 1-on-1 time to
+    <a style="color:#6D5BBC;" href="{{ .googleCalendarLink }}">Google Calendar</a>
+    or
+      <a style="color:#6D5BBC;" href="{{ .outlookLink }}">iCal/Outlook</a>
+  </div>
+{{ else }}
+  <div style="text-align:center; padding-bottom: 20px;">
+    <a href="{{ .googleCalendarLink }}"
       style="padding-left:30px;
       padding-right:30px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color:#6D5BBC;
       border: 1px solid #6D5BBC;
       border-radius:23px;
@@ -70,14 +84,33 @@
       font-weight: 400;
       text-decoration:none;
       width: 260px;
-      -webkit-text-size-adjust:none;">Add to iCal/Outlook</a>
-</div>
-<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:16px;
-  line-height:5px;
-  text-align:center;
-  padding-bottom: 50px;
-  font-weight: 400;" align="center">
-  <a style="color:#6D5BBC;" href="{{ .reviewsIndexLink }}">Go to Clanbeat to prepare</a>
-</div>
+      -webkit-text-size-adjust:none;">Add to Google Calendar</a>
+      <br />
+      <a href="{{ .outlookLink }}"
+        style="padding-left:30px;
+        margin-bottom: 20px;
+        padding-right:30px;
+        color:#6D5BBC;
+        border: 1px solid #6D5BBC;
+        border-radius:23px;
+        background-color:#ffffff;
+        display:inline-block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size:20px;
+        line-height:45px;
+        text-align:center;
+        font-weight: 400;
+        text-decoration:none;
+        width: 260px;
+        -webkit-text-size-adjust:none;">Add to iCal/Outlook</a>
+  </div>
+  <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-size:16px;
+    line-height:5px;
+    text-align:center;
+    padding-bottom: 50px;
+    font-weight: 400;" align="center">
+    <a style="color:#6D5BBC;" href="{{ .reviewsIndexLink }}">Go to Clanbeat to prepare</a>
+  </div>
+{{ end }}
 {{ end }}

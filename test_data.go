@@ -154,7 +154,8 @@ var testData = map[string][]byte{
 		  "username": "John Doe",
 		  "employeeName": "Karl Suur",
 			"buttonLink": "https://staging.clanbeat.com",
-			"scheduledAt": "2. January at 3:04PM"
+			"scheduledAt": "2. January at 3:04PM",
+			"invitationLink": "http://clanbeat.com"
 		}
 	`),
 	"employeeRequest": []byte(`
@@ -162,7 +163,8 @@ var testData = map[string][]byte{
 		  "username": "John Doe",
 		  "leadName": "Karl Suur",
 			"buttonLink": "https://staging.clanbeat.com",
-			"scheduledAt": "2. January at 3:04PM"
+			"scheduledAt": "2. January at 3:04PM",
+			"invitationLink": ""
 		}
 	`),
 	"demoRequest": []byte(`
