@@ -24,7 +24,23 @@ var testData = map[string][]byte{
 					"status": 0,
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
-					"category": "manager"
+					"category": "manager",
+					"subgoals": [{
+						"status": 0,
+						"content": "start reading the book about having fun",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 0,
+						"content": "practice smiling",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 1,
+						"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					}]
 				},
 				{
 					"status": 1,
@@ -63,7 +79,23 @@ var testData = map[string][]byte{
 					"status": 0,
 					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
 					"partnerName": "Siim Susi",
-					"category": "manager"
+					"category": "manager",
+					"subgoals": [{
+						"status": 0,
+						"content": "start reading the book about having fun",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 0,
+						"content": "practice smiling",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 1,
+						"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					}]
 				}
 			]
 		}
@@ -80,7 +112,23 @@ var testData = map[string][]byte{
 							"status": 1,
 							"content": "Be more fun at the office",
 							"partnerName": "Siim Susi",
-							"category": "employee"
+							"category": "employee",
+							"subgoals": [{
+								"status": 0,
+								"content": "start reading the book about having fun",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 0,
+								"content": "practice smiling",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 1,
+								"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
 						},
 						{
 							"status": 0,
@@ -92,7 +140,23 @@ var testData = map[string][]byte{
 							"status": 0,
 							"content": "finish reading a book",
 							"partnerName": "Mari Maasikas",
-							"category": "skill"
+							"category": "skill",
+							"subgoals": [{
+								"status": 1,
+								"content": "start reading the book",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 1,
+								"content": "turn pages in the book and read",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 0,
+								"content": "think about what I learned from this book when it is finsihed",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
 						}
 					]
 				},
@@ -103,7 +167,13 @@ var testData = map[string][]byte{
 							"status": 0,
 							"content": "finish reading a book",
 							"partnerName": "Mari Maasikas",
-							"category": "skill"
+							"category": "skill",
+							"subgoals": [{
+								"status": 1,
+								"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
 						},
 						{
 							"status": 1,
@@ -132,7 +202,8 @@ var testData = map[string][]byte{
 					"status": 0,
 					"content": "finish reading a book",
 					"partnerName": "Mari Maasikas",
-					"category": "skill"
+					"category": "skill",
+					"subgoals": []
 				},
 				{
 					"status": 1,

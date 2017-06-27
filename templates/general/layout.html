@@ -12,6 +12,25 @@
         <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
           {{ .content }} <br /> <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
         </a>
+      </a>
+      {{ if .subgoals }}
+        <table border="0" height="100%" width="100%" style="margin-bottom:20px;">
+        {{ range .subgoals }}
+            <tr>
+              <td  align="left" valign="top" style="padding:20px 15px 0px 0px;vertical-align:top;margin-top:20px;">
+                <a href="{{ $link }}" target="_blank">
+                  <img src="{{ checkBoxImage .status }}" />
+                </a>
+              </td>
+              <td align="left" valign="top" style="vertical-align:top;line-height:1.4;font-size: 16px;padding-top:20px;">
+                <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
+                  {{ .content }}
+                </a>
+              </td>
+            </tr>
+        {{ end }}
+        </table>
+      {{ end }}
       </td>
       <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;"><img src="{{ categoryImage .category }}" /></td>
     </tr>
