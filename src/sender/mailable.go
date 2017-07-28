@@ -29,10 +29,26 @@ var funcMap = template.FuncMap{
 	"titleForMood":       titleForMood,
 	"checkBoxImage":      checkBoxImage,
 	"categoryImage":      categoryImage,
+	"makeRange":          makeRange,
 }
 
 func addReviewSeparator(i int) bool {
 	return i != 0
+}
+
+func makeRange(count float64, done float64) []string {
+	c := int(count)
+	doneCount := int(done)
+	a := make([]string, c)
+	for i := range a {
+		if (i + 1) <= doneCount {
+			a[i] = "#00BD54"
+		} else {
+			a[i] = "#f2f2f2"
+		}
+	}
+	return a
+
 }
 
 func colorForMood(score float64) string {

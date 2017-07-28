@@ -25,6 +25,8 @@ var testData = map[string][]byte{
 					"content": "Be more fun at the office",
 					"partnerName": "Siim Susi",
 					"category": "manager",
+					"totalSubgoals": 3,
+					"doneSubgoals": 1,
 					"subgoals": [{
 						"status": 0,
 						"content": "start reading the book about having fun",
@@ -113,6 +115,8 @@ var testData = map[string][]byte{
 							"content": "Be more fun at the office",
 							"partnerName": "Siim Susi",
 							"category": "employee",
+							"totalSubgoals": 3,
+							"doneSubgoals": 1,
 							"subgoals": [{
 								"status": 0,
 								"content": "start reading the book about having fun",
@@ -141,6 +145,8 @@ var testData = map[string][]byte{
 							"content": "finish reading a book",
 							"partnerName": "Mari Maasikas",
 							"category": "skill",
+							"totalSubgoals": 3,
+							"doneSubgoals": 2,
 							"subgoals": [{
 								"status": 1,
 								"content": "start reading the book",
@@ -168,6 +174,8 @@ var testData = map[string][]byte{
 							"content": "finish reading a book",
 							"partnerName": "Mari Maasikas",
 							"category": "skill",
+							"totalSubgoals": 1,
+							"doneSubgoals": 1,
 							"subgoals": [{
 								"status": 1,
 								"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",

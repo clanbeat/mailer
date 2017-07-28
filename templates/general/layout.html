@@ -14,6 +14,22 @@
         </a>
       </a>
       {{ if .subgoals }}
+      {{ if .doneSubgoals }}
+       <table height="100%" width="100%" style="width:100%;margin-top:5px;">
+         <tr>
+           <td style="font-size:13px;color:#bdbdbd;width:80px;">Progress {{ .doneSubgoals }}/{{ .totalSubgoals }}</td>
+           <td>
+             <table width="100%" style="width:100%;margin-top:5px;margin-bottom:5px;">
+               <tr>
+                 {{ range $color := makeRange .totalSubgoals .doneSubgoals }}
+                   <td style="height:0px;background-color:{{ $color }};border-right: 2px solid #fff;"></td>
+                 {{ end }}
+               </tr>
+             </table>
+           </td>
+         </tr>
+        </table>
+        {{ end }}
         <table border="0" height="100%" width="100%" style="margin-bottom:20px;">
         {{ range .subgoals }}
             <tr>
