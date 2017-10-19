@@ -1,180 +1,200 @@
 {{ define "goalsList" }}
 <table border="0" height="100%" style="margin-top:40px;max-width:400px;min-width:300px;margin-left:auto;margin-right:auto;">
-  {{ $link := .buttonLink}}
-  {{ range .goals }}
-    <tr style="padding: 20px;">
-      <td  align="right" valign="top" style="width:22px;padding:5px 15px 0 10px;vertical-align:top;">
-        <a href="{{ $link }}" target="_blank">
-          <img src="{{ checkBoxImage .status }}" />
-        </a>
-      </td>
-      <td align="left" valign="top" style="vertical-align:top;line-height: 1.4;padding-bottom: 10px;font-size: 16px;">
-        <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
-          {{ .content }} <br /> <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
-        </a>
+  {{ $link := .buttonLink}} {{ range .goals }}
+  <tr style="padding: 20px;">
+    <td align="right" valign="top" style="width:22px;padding:5px 15px 0 10px;vertical-align:top;">
+      <a href="{{ $link }}" target="_blank">
+        <img src="{{ checkBoxImage .status }}" />
       </a>
-      {{ if .subgoals }}
-      {{ if .doneSubgoals }}
-       <table height="100%" width="100%" style="width:100%;margin-top:5px;">
-         <tr>
-           <td style="font-size:13px;color:#bdbdbd;width:80px;">Progress {{ .doneSubgoals }}/{{ .totalSubgoals }}</td>
-           <td>
-             <table width="100%" style="width:100%;margin-top:5px;margin-bottom:5px;">
-               <tr>
-                 {{ range $color := makeRange .totalSubgoals .doneSubgoals }}
-                   <td style="height:0px;background-color:{{ $color }};border-right: 2px solid #fff;"></td>
-                 {{ end }}
-               </tr>
-             </table>
-           </td>
-         </tr>
+    </td>
+    <td align="left" valign="top" style="vertical-align:top;line-height: 1.4;padding-bottom: 10px;font-size: 16px;">
+      <table>
+        <tr>
+          <td>
+            <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
+              {{ .content }}
+              <br />
+              <span style="color:#bdbdbd;">with {{ .partnerName }}</span>
+            </a>
+            </a>
+            {{ if .subgoals }} {{ if .doneSubgoals }}
+            <table width="100%" style="width:100%;margin-top:5px;">
+              <tr>
+                <td style="font-size:13px;color:#bdbdbd;width:80px;">Progress {{ .doneSubgoals }}/{{ .totalSubgoals }}</td>
+                <td>
+                  <table width="100%" style="width:100%;margin-top:5px;margin-bottom:5px;">
+                    <tr>
+                      {{ range $color := makeRange .totalSubgoals .doneSubgoals }}
+                      <td style="height:0px;background-color:{{ $color }};border-right: 2px solid #fff;"></td>
+                      {{ end }}
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            {{ end }}
+            <table border="0" height="100%" width="100%" style="margin-bottom:20px;">
+              {{ range .subgoals }}
+              <tr>
+                <td align="left" valign="top" style="width:22px;padding:20px 15px 0px 0px;vertical-align:top;margin-top:20px;">
+                  <a href="{{ $link }}" target="_blank">
+                    <img src="{{ checkBoxImage .status }}" />
+                  </a>
+                </td>
+                <td align="left" valign="top" style="vertical-align:top;line-height:1.4;font-size: 16px;padding-top:20px;">
+                  <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
+                    {{ .content }}
+                  </a>
+                </td>
+              </tr>
+              {{ end }}
+          </td>
+        </tr>
         </table>
         {{ end }}
-        <table border="0" height="100%" width="100%" style="margin-bottom:20px;">
-        {{ range .subgoals }}
-            <tr>
-              <td  align="left" valign="top" style="width:22px;padding:20px 15px 0px 0px;vertical-align:top;margin-top:20px;">
-                <a href="{{ $link }}" target="_blank">
-                  <img src="{{ checkBoxImage .status }}" />
-                </a>
-              </td>
-              <td align="left" valign="top" style="vertical-align:top;line-height:1.4;font-size: 16px;padding-top:20px;">
-                <a style="text-decoration:none;color:#333233;" href="{{ $link }}" target="_blank">
-                  {{ .content }}
-                </a>
-              </td>
-            </tr>
-        {{ end }}
-        </table>
-      {{ end }}
-      </td>
-      <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;"><img src="{{ categoryImage .category }}" /></td>
-    </tr>
+      </table>
+    </td>
+    <td align="left" valign="top" style="padding:5px 10px 0 10px;vertical-align:top;">
+      <img src="{{ categoryImage .category }}" />
+    </td>
+  </tr>
   {{ end }}
 </table>
-{{ end }}
-
-
-{{ define "layout" }}
+{{ end }} {{ define "layout" }}
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
-  <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- So that mobile will display zoomed in -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- enable media queries for windows phone 8 -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
   <title>Clanbeat</title>
 
   <style type="text/css">
-body {
-  margin: 0;
-  padding: 0;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-.body-text {
-  padding-bottom: 50px;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size:20px;
-  line-height:22px;
-  text-align:left;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;
-}
-.title-text {
-  padding-bottom: 15px;
-  padding-top: 50px;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size:40px;
-  line-height:40px;
-  text-align:left;
-  color:#333233;
-  width: 400px;
-  font-weight: 600;
-}
-.pink-text {
-  padding-bottom: 50px;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size:16px;
-  line-height:40px;
-  text-align:left;
-  color:#FD067D;
-  width: 400px;
-  font-weight: 400;
-}
-.bottom-text {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size:10px;
-  line-height:5px;
-  text-align:center;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;
-}
-table {
-  border-spacing: 0;
-}
-table td {
-  border-collapse: collapse;
-}
-table {
-  mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
-}
-img {
-  -ms-interpolation-mode: bicubic;
-}
-.yshortcuts a {
-  border-bottom: none !important;
-}
-@media screen and (max-width: 599px) {
-  .force-row,
-  .container {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-@media screen and (max-width: 400px) {
-  .container-padding {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-}
+    body {
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
 
-</style>
+    .body-text {
+      padding-bottom: 50px;
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      line-height: 22px;
+      text-align: left;
+      color: #333233;
+      width: 500px;
+      font-weight: 400;
+    }
+
+    .title-text {
+      padding-bottom: 15px;
+      padding-top: 50px;
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: left;
+      color: #333233;
+      width: 400px;
+      font-weight: 600;
+    }
+
+    .pink-text {
+      padding-bottom: 50px;
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: left;
+      color: #FD067D;
+      width: 400px;
+      font-weight: 400;
+    }
+
+    .bottom-text {
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      line-height: 5px;
+      text-align: center;
+      color: #333233;
+      width: 500px;
+      font-weight: 400;
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    table {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    .yshortcuts a {
+      border-bottom: none !important;
+    }
+
+    @media screen and (max-width: 599px) {
+      .force-row,
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .container-padding {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+    }
+  </style>
 </head>
 
 <body style="margin:0; padding:0;" bgcolor="#F0F0F0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 
-<!-- 100% background wrapper (grey background) -->
-<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#F0F0F0">
-  <tr>
-     <td align="center" valign="top" bgcolor="#F0F0F0" style="background: #ffffff;">
+  <!-- 100% background wrapper (grey background) -->
+  <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#F0F0F0">
+    <tr>
+      <td align="center" valign="top" bgcolor="#F0F0F0" style="background: #ffffff;">
 
-      <br>
+        <br>
 
-      <!-- 600px container (white background) -->
-      <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px;max-width:600px">
-        <tr>
-          <td class="container-padding content" align="left" style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;background-color:#ffffff">
-            <br />
-            <a href="https://clanbeat.com" target="_blank">
-              <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.png" width="102" height="22" style="outline: none; -ms-interpolation-mode: bicubic; display: block;">
-            </a>
-            {{ template "content" . }}
-          </td>
-        </tr>
-      </table>
-<!--/600px container -->
+        <!-- 600px container (white background) -->
+        <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px;max-width:600px">
+          <tr>
+            <td class="container-padding content" align="left" style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;background-color:#ffffff">
+              <br />
+              <a href="https://clanbeat.com" target="_blank">
+                <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/logo.png" width="102" height="22" style="outline: none; -ms-interpolation-mode: bicubic; display: block;">
+              </a>
+              {{ template "content" . }}
+            </td>
+          </tr>
+        </table>
+        <!--/600px container -->
 
 
-    </td>
-  </tr>
-</table>
-<!--/100% background wrapper-->
+      </td>
+    </tr>
+  </table>
+  <!--/100% background wrapper-->
 
 </body>
+
 </html>
 {{ end }}
