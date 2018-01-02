@@ -8,7 +8,7 @@
   color:#333233;
   width: 400px;
   font-weight: 600;">
-  Invitation is still pending
+  Time to get more organized!
 </div>
 <div style="padding-bottom: 50px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -18,9 +18,9 @@
   color:#FD067D;
   width: 400px;
   font-weight: 400;">
-  This ain’t the way to do 1-on-1s <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/nope.png" />
+  Form your own A-team!
 </div>
-<div style="padding-bottom: 50px;
+<div style="padding-bottom: 30px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size:20px;
   line-height:25px;
@@ -28,10 +28,22 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, {{ .username }}. You have invited {{ .memberEmail }} to join your clan {{ .projectName }} on Clanbeat. However, it’s been a very long week and the invitation hasn’t been accepted yet. You might want do a tribal dance around them,  send a reminder or check the e-mail address for typos.
+  Hi, {{ .username }}. Your clan is growing, isn't that nice! Filter your
+  people into teams by different functions, locations or whatever you like.
+  You can then filter the home feed by those teams and get better overview
+  on what is going on in each one of them.
 </div>
-  <div style="text-align:center; padding-bottom: 50px;">
-  <a href="{{ .clanLink }}"
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align:center;
+  padding-top:30px;
+  color:#979797;">
+  <img style="width:100%;position:relative;" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/teams_demo.png" />
+  <p style="margin-top: 30px;">That's pretty much it.</p>
+</div>
+<div style="text-align:center;margin-bottom:40px;">
+  <a href="{{ .buttonLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
 		background-color:#6D5BBC;
@@ -44,14 +56,19 @@
 		text-align:center;
 		font-weight: 400;
 		text-decoration:none;
-		-webkit-text-size-adjust:none;">Go to clan </a>
-  	</div>
+		-webkit-text-size-adjust:none;">Get started with teams</a>
+</div>
 <div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-size:10px;
-  line-height:5px;
+  line-height:15px;
   text-align:center;
   color:#333233;
   width: 500px;
   font-weight: 400;" align="center">
+  <p>
+    NB! this feature enables you to filter in or out specific teams in the home feed.
+    Everyone can still see each others' public posts, doesn't matter in which teams they are.
+    Transparency for the win!
+  </p>
 </div>
 {{ end }}

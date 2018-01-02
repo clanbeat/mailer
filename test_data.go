@@ -1,9 +1,283 @@
 package main
 
 var testData = map[string][]byte{
+	"oneWeekToReview": []byte(`
+		{
+		  "username": "John Doe",
+		  "partnerName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM",
+			"goals": [
+				{
+					"status": 0,
+					"content": "finish reading a book",
+					"partnerName": "Mari Maasikas",
+					"category": "skill"
+				},
+				{
+					"status": 1,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "employee"
+				},
+				{
+					"status": 0,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "manager",
+					"totalSubgoals": 3,
+					"doneSubgoals": 1,
+					"subgoals": [{
+						"status": 0,
+						"content": "start reading the book about having fun",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 0,
+						"content": "practice smiling",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 1,
+						"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					}]
+				},
+				{
+					"status": 1,
+					"content": "Clean the table before going to vacation",
+					"partnerName": "Siim Susi",
+					"category": "employee"
+				},
+				{
+					"status": 1,
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+					"partnerName": "Mart The Manager",
+					"category": "employee"
+				}
+			]
+		}
+	`),
+	"employeePrepare": []byte(`
+		{
+			"username": "Karl Suur",
+			"leadName": "John Doe",
+			"buttonLink": "https://staging.clanbeat.com",
+			"goals": [
+				{
+					"status": 0,
+					"content": "finish reading a book",
+					"partnerName": "Mari Maasikas",
+					"category": "skill"
+				},
+				{
+					"status": 1,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "employee"
+				},
+				{
+					"status": 0,
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+					"partnerName": "Siim Susi",
+					"category": "manager",
+					"subgoals": [{
+						"status": 0,
+						"content": "start reading the book about having fun",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 0,
+						"content": "practice smiling",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					},{
+						"status": 1,
+						"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+						"partnerName": "Mari Maasikas",
+						"category": "skill"
+					}]
+				}
+			]
+		}
+	`),
+	"weeklyGoals": []byte(`
+		{
+			"username": "John Doe",
+			"buttonLink": "https://staging.clanbeat.com",
+			"projectGoals": [
+				{
+					"name" : "Team Clanbeaters",
+					"goals": [
+						{
+							"status": 1,
+							"content": "Be more fun at the office",
+							"partnerName": "Siim Susi",
+							"category": "employee",
+							"totalSubgoals": 3,
+							"doneSubgoals": 1,
+							"subgoals": [{
+								"status": 0,
+								"content": "start reading the book about having fun",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 0,
+								"content": "practice smiling",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 1,
+								"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
+						},
+						{
+							"status": 0,
+							"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+							"partnerName": "Siim Susi",
+							"category": "manager"
+						},
+						{
+							"status": 0,
+							"content": "finish reading a book",
+							"partnerName": "Mari Maasikas",
+							"category": "skill",
+							"totalSubgoals": 3,
+							"doneSubgoals": 2,
+							"subgoals": [{
+								"status": 1,
+								"content": "start reading the book",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 1,
+								"content": "turn pages in the book and read",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							},{
+								"status": 0,
+								"content": "think about what I learned from this book when it is finsihed",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
+						}
+					]
+				},
+				{
+					"name" : "Wafflehouse",
+					"goals": [
+						{
+							"status": 0,
+							"content": "finish reading a book",
+							"partnerName": "Mari Maasikas",
+							"category": "skill",
+							"totalSubgoals": 1,
+							"doneSubgoals": 1,
+							"subgoals": [{
+								"status": 1,
+								"content": "try to make some jokes when talking to someone. They can be awkward in the beginning, but that is ok. It is always a bit awkward, but it will get better over time.",
+								"partnerName": "Mari Maasikas",
+								"category": "skill"
+							}]
+						},
+						{
+							"status": 1,
+							"content": "Be more fun at the office",
+							"partnerName": "Siim Susi",
+							"category": "employee"
+						},
+						{
+							"status": 0,
+							"content": "Find new assistant to Susie.",
+							"partnerName": "Siim Susi",
+							"category": "manager"
+						}
+					]
+				}
+			]
+		}
+	`),
+	"leadPrepare": []byte(`
+		{
+		  "username": "John Doe",
+		  "employeeName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"goals": [
+				{
+					"status": 0,
+					"content": "finish reading a book",
+					"partnerName": "Mari Maasikas",
+					"category": "skill",
+					"subgoals": []
+				},
+				{
+					"status": 1,
+					"content": "Find new assistant to Susie, who could do the awesome work Susie needs to be done and has some initiative.",
+					"partnerName": "Siim Susi",
+					"category": "employee"
+				},
+				{
+					"status": 0,
+					"content": "Be more fun at the office",
+					"partnerName": "Siim Susi",
+					"category": "manager"
+				}
+			]
+		}
+	`),
+	"leadRequest": []byte(`
+		{
+		  "username": "John Doe",
+		  "employeeName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM",
+			"invitationLink": "http://clanbeat.com"
+		}
+	`),
+	"employeeRequest": []byte(`
+		{
+		  "username": "John Doe",
+		  "leadName": "Karl Suur",
+			"buttonLink": "https://staging.clanbeat.com",
+			"scheduledAt": "2. January at 3:04PM",
+			"invitationLink": ""
+		}
+	`),
+	"demoRequest": []byte(`
+		{
+		  "email": "someone@somemail.com",
+		  "name": "John Doe",
+		  "phoneNumber": "+12313132",
+			"company": "Testing Company",
+		  "jobTitle": "Team Lead",
+		  "teamSize": "2-20",
+		  "comments": "some free form text",
+		  "location": "London, UK"
+		}
+	`),
 	"invitation": []byte(`{
     "inviterName": "Gloria Paul",
-    "projectName": "Vikings"
+    "projectName": "Vikings",
+		"reviewData": {
+			"scheduledAt": "2. January at 3:04PM",
+			"projectId": 12,
+			"employeeId": 1,
+			"allDay": false
+		}
+  }`),
+	"invitationToManager": []byte(`{
+    "inviterName": "Gloria Paul",
+    "projectName": "Vikings",
+		"userRole": "admin",
+		"reviewData": {
+			"scheduledAt": "2. January at 3:04PM",
+			"projectId": 12,
+			"employeeId": 1,
+			"allDay": false
+		}
   }`),
 	"personalStats": []byte(`{
 		"start": "1. March",
@@ -120,12 +394,69 @@ var testData = map[string][]byte{
 			},
 			{
 				"username": "Janika Liiv",
-				"date": "12. March",
+				"date": "12. March 12:00PM",
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
 			"needReviews": ["Mari Maasikas", "Siim Susi", "Artur Alliksaar", "Marie Under"],
-			"oneOnOneLink": "https://beta.clanbeat.com/oneonone"
+			"oneOnOneLink": "https://beta.clanbeat.com"
 		}`),
 	"betaRequest": []byte(`{"email":"janika.liiv@gmail.com"}`),
+	"managerLatestUpdates": []byte(`{
+		"user": {
+			"firstName": "Janika",
+			"lastName": "Liiv",
+			"userName": "Janika Liiv",
+			"jobTitle": "Back End developer",
+			"createdAt": "Sept 2016",
+			"picture":"https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518",
+			"profileLink": "https://beta.clanbeat.com/profile/18"
+		},
+		"buttonLink": "https://beta.clanbeat.com",
+		"moods": [
+			{
+				"createdAt": "08. November",
+				"score": 1,
+				"message": "We finally got up some 1-on-1 flow changes, that give me opportunity to urge our users to write more stuff down while preparing. Super."
+			},
+			{
+				"createdAt": "08. November",
+				"score": 4,
+				"message": "Got email from Rocket Internet (Berlin event followup). This can be a total game changer for Clanbeat. BIG TIME -----  For the demo I believe I will ask for it at the beginning of January 17, We are working now on restructuring the company and scaling up, appraisals and one on one will be at the core of this restructuring."
+			},
+			{
+				"createdAt": "08. November",
+				"score": 6,
+				"message": "Vilnius Airport is more like pointless bus-station. Flight delays seems rule here."
+			}
+		]
+	}`), "employeeLatestUpdates": []byte(`{
+		"user": {
+			"firstName": "Janika",
+			"lastName": "Liiv",
+			"userName": "Janika Liiv",
+			"jobTitle": "Back End developer",
+			"createdAt": "Sept 2016",
+			"picture":"https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518",
+			"profileLink": "https://beta.clanbeat.com/profile/18"
+		},
+		"buttonLink": "https://beta.clanbeat.com",
+		"moods": [
+			{
+				"createdAt": "18. November",
+				"score": 1,
+				"message": "We finally got up some 1-on-1 flow changes, that give me opportunity to urge our users to write more stuff down while preparing. Super."
+			},
+			{
+				"createdAt": "07. November",
+				"score": 4,
+				"message": "Got email from Rocket Internet (Berlin event followup). This can be a total game changer for Clanbeat. BIG TIME -----  For the demo I believe I will ask for it at the beginning of January 17, We are working now on restructuring the company and scaling up, appraisals and one on one will be at the core of this restructuring."
+			},
+			{
+				"createdAt": "01. November",
+				"score": 6,
+				"message": "Vilnius Airport is more like pointless bus-station. Flight delays seems rule here."
+			}
+		]
+	}`),
 }

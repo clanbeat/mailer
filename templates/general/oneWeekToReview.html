@@ -8,7 +8,7 @@
   color:#333233;
   width: 400px;
   font-weight: 600;">
-  One extra feature
+  One week to go!
  </div>
 <div style="padding-bottom: 50px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -18,7 +18,7 @@
   color:#FD067D;
   width: 400px;
   font-weight: 400;">
-  Since you’ve been flying high <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/rocket.png" />
+  Just a quick reminder <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/clock.png" />
 </div>
 <div style="padding-bottom: 50px;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -28,10 +28,21 @@
   color:#333233;
   width: 500px;
   font-weight: 400;">
-  Hi, {{ .firstName }}.<br>
-You have been upgraded to administrator! This means a new feature is unlocked – you can now manage your clan. Go see yourself what’s new!
+  Hi, {{ .username }}.
+  How exciting, your 1-on-1 with {{ .partnerName }} is happening in a week, on <span style="font-weight:bold;">{{ .scheduledAt }}</span>!
+  If you want to get those goals sorted, it’s now or never!
+  Why not have a look at them right now:
+  {{ template "goalsList" . }}
 </div>
-<div style="text-align:center; padding-bottom: 50px;">
+  <div style="
+  text-align:center;
+  padding-bottom: 50px;">
+  <div style="
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #979797;
+  padding: 0 0 35px 0px;">Get cracking!</div>
   <a href="{{ .buttonLink }}"
     style="padding-left:30px;
 	    padding-right:30px;
@@ -46,5 +57,13 @@ You have been upgraded to administrator! This means a new feature is unlocked �
 		font-weight: 400;
 		text-decoration:none;
 		-webkit-text-size-adjust:none;">Go to Clanbeat</a>
+  	</div>
+<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size:10px;
+  line-height:5px;
+  text-align:center;
+  color:#333233;
+  width: 500px;
+  font-weight: 400;" align="center">
 </div>
 {{ end }}
