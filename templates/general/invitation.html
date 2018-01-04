@@ -1,73 +1,50 @@
 {{ define "content" }}
-<div style="padding-bottom: 15px;
+<div style="padding-bottom: 12px;
   padding-top: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:40px;
+  font-family: 'Lato', sans-serif;
+  font-size:36px;
   line-height:40px;
   text-align:left;
-  color:#333233;
+  letter-spacing: 1px;  
+  color:#505050;
   width: 400px;
-  margin-bottom: 40px;
-  font-weight: 600;">
-  Congrats, {{ .inviterName }} has picked you!
+  font-weight: bold;">
+  You're invited
 </div>
-<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:20px;
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  opacity: 0.5;
+  line-height:40px;
+  text-align:left;
+  color:#505050;
+  width: 400px; ">
+  And you will love it
+</div>
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
   line-height:25px;
   text-align:left;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;">
-  {{ if .reviewData }}
-    {{ .inviterName }} scheduled a 1-on-1 with you for
-    <span style="font-weight:bold;text-align:center;width:100%;">{{ .reviewData.scheduledAt }}</span> on <a target="_blank" href="https://clanbeat.com/" alt="Clanbeat">Clanbeat</a>.
-    <br />
-    You don’t have to wait until then, instead you can already start preparing by joining Clanbeat.
-    <br />
-  {{ else }}
-    {{ .inviterName }} wants you to join the clan {{ .projectName }} on <a target="_blank" href="https://clanbeat.com/" alt="Clanbeat">Clanbeat</a>.
-  {{ end }}
-  <br />  <br />
-  Clanbeat is a tool for having <span style="white-space: nowrap">1-on-1s</span>, which put employees first.
-  Personal growth is on your way!
+  letter-spacing: 0.6px;
+  color:#505050;
+  width: 500px;">
+    BLABLABLA
 </div>
-<div style="text-align:center; padding-top: 40px;">
+<div style="text-align:center; padding-bottom: 50px;">
 <a href="{{ .link }}"
-  style="padding-left:30px;
-    padding-right:30px;
-	background-color:#6D5BBC;
-	border-radius:23px;
-	color:#ffffff;
-	display:inline-block;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size:23px;
-	line-height:45px;
-	text-align:center;
-	font-weight: 400;
-	text-decoration:none;
-	cursor:pointer;
+  style="padding-left:67px;
+	    padding-right:67px;
+		height: 52.5px;
+		background-color:#00bd54;
+		border-radius:200px;
+		color:#ffffff;
+		display:inline-block;
+		font-family: 'Lato', sans-serif;
+		font-size:24px;
+		line-height:52.5px;
+		text-align:center;
+		text-decoration:none;
 	-webkit-text-size-adjust:none;">Join {{ .projectName }}</a>
-</div>
-{{ if .reviewData }}
-<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  color: #aaaaaa;
-  font-size:16px;
-  line-height:5px;
-  text-align:center;
-  padding-bottom: 10px;
-  padding-top: 15px;
-  font-weight: 400;" align="center">
-  Add the 1-on-1 time to
-  <a style="color:#6D5BBC;" href="{{ .reviewData.googleCalendarLink }}">Google Calendar</a>
-  or
-    <a style="color:#6D5BBC;" href="{{ .reviewData.outlookLink }}">iCal/Outlook</a>
-</div>
-{{ end }}
-
-<div style="padding-top:20px;padding-bottom:20px;color:#aaaaaa;font-family: 'Source Sans Pro', sans-serif;">
-  <h2 style="text-align:center;">How 1-on-1s work in Clanbeat</h2>
-  <a href="https://clanbeat.com/#video-intro" target="_blank">
-    <img src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/video_intro.png" />
-  </a>
 </div>
 {{ end }}
