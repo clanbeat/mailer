@@ -1,57 +1,50 @@
 {{ define "content" }}
-<div style="padding-bottom: 15px;
+<div style="padding-bottom: 12px;
   padding-top: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:40px;
+  font-family: 'Lato', sans-serif;
+  font-size:36px;
   line-height:40px;
   text-align:left;
-  color:#333233;
+  letter-spacing: 1px;  
+  color:#505050;
   width: 400px;
-  font-weight: 600;">
+  font-weight: bold;">
   Invitation is still pending
 </div>
-<div style="padding-bottom: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:16px;
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  opacity: 0.5;
   line-height:40px;
   text-align:left;
-  color:#FD067D;
-  width: 400px;
-  font-weight: 400;">
-  This ain’t the way to do 1-on-1s <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/nope.png" />
+  color:#505050;
+  width: 400px; ">
+  This ain’t right <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/nope.png" />
 </div>
-<div style="padding-bottom: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:20px;
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
   line-height:25px;
   text-align:left;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;">
-  Hi, {{ .username }}. You have invited {{ .memberEmail }} to join your clan {{ .projectName }} on Clanbeat. However, it’s been a very long week and the invitation hasn’t been accepted yet. You might want do a tribal dance around them,  send a reminder or check the e-mail address for typos.
+  letter-spacing: 0.6px;
+  color:#505050;
+  width: 500px;">
+  Hi, {{ .username }}. You have invited {{ .memberEmail }} to join your company {{ .projectName }} on Clanbeat. However, it’s been a very long week and the invitation hasn’t been accepted yet. You might want do a tribal dance around them,  send a reminder or check the e-mail address for typos.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
   <a href="{{ .clanLink }}"
-    style="padding-left:30px;
-	    padding-right:30px;
-		background-color:#6D5BBC;
-		border-radius:23px;
+    style="padding-left:67px;
+	    padding-right:67px;
+		height: 52.5px;
+		background-color:#00bd54;
+		border-radius:200px;
 		color:#ffffff;
 		display:inline-block;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size:23px;
-		line-height:45px;
+		font-family: 'Lato', sans-serif;
+		font-size:24px;
+		line-height:52.5px;
 		text-align:center;
-		font-weight: 400;
 		text-decoration:none;
-		-webkit-text-size-adjust:none;">Go to clan </a>
+		-webkit-text-size-adjust:none;">Go to Clanbeat </a>
   	</div>
-<div style="font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:10px;
-  line-height:5px;
-  text-align:center;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;" align="center">
-</div>
 {{ end }}
