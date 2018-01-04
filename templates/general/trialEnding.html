@@ -1,51 +1,50 @@
 {{ define "content" }}
-<div style="padding-bottom: 15px;
+<div style="padding-bottom: 12px;
   padding-top: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:40px;
+  font-family: 'Lato', sans-serif;
+  font-size:36px;
   line-height:40px;
   text-align:left;
-  color:#333233;
+  letter-spacing: 1px;  
+  color:#505050;
   width: 400px;
-  font-weight: 600;">
-  Go subscribe
+  font-weight: bold;">  Go subscribe
 </div>
-<div style="padding-bottom: 50px;
-  font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:16px;
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  opacity: 0.5;
   line-height:40px;
   text-align:left;
-  color:#FD067D;
-  width: 400px;
-  font-weight: 400;">
+  color:#505050;
+  width: 500px; ">
   If you liked it, then you shoulda put a ring on it <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/ring.png" />
 </div>
-<div style="padding-bottom: 50px;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size:20px;
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
   line-height:25px;
   text-align:left;
-  color:#333233;
-  width: 500px;
-  font-weight: 400;">
+  letter-spacing: 0.6px;
+  color:#505050;
+  width: 500px;">
 	Hi, {{ .username }}.<br><br>
 Your free trial with Clanbeat is ending soon, too soon.
-You have 7 days left to use Clanbeat for free. Subscribe now to keep using Clanbeat
-and having meaningful 1-on-1s.
+You have 7 days left to use Clanbeat for free. Subscribe now to keep using Clanbeat.
 </div>
   <div style="text-align:center; padding-bottom: 50px;">
   <a href="{{ .subscribeLink }}"
-    style="padding-left:30px;
-	    padding-right:30px;
-		background-color:#6D5BBC;
-		border-radius:23px;
+    style="padding-left:67px;
+	    padding-right:67px;
+		height: 52.5px;
+		background-color:#00bd54;
+		border-radius:200px;
 		color:#ffffff;
 		display:inline-block;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size:23px;
-		line-height:45px;
+		font-family: 'Lato', sans-serif;
+		font-size:24px;
+		line-height:52.5px;
 		text-align:center;
-		font-weight: 400;
 		text-decoration:none;
 		-webkit-text-size-adjust:none;">Subscribe</a>
   </div>
