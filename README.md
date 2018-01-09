@@ -26,9 +26,6 @@ Links to email templates
 
 ## Other
 
- * [Teams email ](http://clanbeat-mailer-staging.herokuapp.com/emails/teams)
- * [Latest updates to Employee](http://clanbeat-mailer-staging.herokuapp.com/emails/employeeLatestUpdates)
- * [Latest updates to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/managerLatestUpdates)
  * [Email log in link](http://clanbeat-mailer-staging.herokuapp.com/emails/loginLink)
  * [User has been deactivated](http://clanbeat-mailer-staging.herokuapp.com/emails/deactivated)
  * [Employee needs to prepare](http://clanbeat-mailer-staging.herokuapp.com/emails/employeePrepare)
@@ -40,10 +37,8 @@ Links to email templates
  * [Invitation Pending](http://clanbeat-mailer-staging.herokuapp.com/emails/invitationPending)
  * [Manager needs to prepare](http://clanbeat-mailer-staging.herokuapp.com/emails/leadPrepare)
  * [Employee requested for a 1-on-1 with manager](http://clanbeat-mailer-staging.herokuapp.com/emails/leadRequest)
- * [No posts for 2 weeks](http://clanbeat-mailer-staging.herokuapp.com/emails/noPosts)
  * [Not subscribed after trial end](http://clanbeat-mailer-staging.herokuapp.com/emails/notSubscribed)
  * [Payment failed](http://clanbeat-mailer-staging.herokuapp.com/emails/paymentFailed)
- * [Daily reminder](http://clanbeat-mailer-staging.herokuapp.com/emails/reminder)
  * [Trial ends in a week](http://clanbeat-mailer-staging.herokuapp.com/emails/trialEnding)
  * [Unsubscribed](http://clanbeat-mailer-staging.herokuapp.com/emails/unsubscribed)
  * [User upgraded to Admin](http://clanbeat-mailer-staging.herokuapp.com/emails/upgradedToAdmin)
