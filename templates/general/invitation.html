@@ -1,4 +1,5 @@
 {{ define "content" }}
+<div style="padding-left: 20px;">
 <div style="padding-bottom: 12px;
   padding-top: 50px;
   font-family: 'Lato', sans-serif;
@@ -11,7 +12,7 @@
   font-weight: bold;">
   You're invited
 </div>
-<div style="padding-bottom: 80px;
+<div style="padding-bottom: 50px;
   font-family: 'Lato', sans-serif;
   font-size:21px;
   opacity: 0.5;
@@ -19,7 +20,7 @@
   text-align:left;
   color:#505050;
   width: 400px; ">
-  And you will love it
+  And you will love it <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/Heart.png" />
 </div>
 <div style="padding-bottom: 80px;
   font-family: 'Lato', sans-serif;
@@ -29,7 +30,8 @@
   letter-spacing: 0.6px;
   color:#505050;
   width: 500px;">
-    BLABLABLA
+    {{ .inviterName }} invited you to join company {{ .projectName }} on Clanbeat. Inspiring conversations and new connections await - all within your own company.
+</div>
 </div>
 <div style="text-align:center; padding-bottom: 50px;">
 <a href="{{ .link }}"
