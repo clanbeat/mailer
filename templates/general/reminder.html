@@ -1,0 +1,76 @@
+{{ define "content" }}
+<div style="padding-left: 20px;">
+<div style="padding-bottom: 12px;
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size:36px;
+  line-height:40px;
+  text-align:left;
+  letter-spacing: 1px;  
+  color:#505050;
+  width: 400px;
+  font-weight: bold;">
+  What happened in your day?
+</div>
+<div style="padding-bottom: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  opacity: 0.5;
+  line-height:40px;
+  text-align:left;
+  color:#505050;
+  width: 500px; ">
+  It's your chance to write history! <img height="20px" src="https://s3.eu-central-1.amazonaws.com/clanbeat-emails/rocket.png" />
+</div>
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  line-height:25px;
+  text-align:left;
+  letter-spacing: 0.6px;
+  color:#505050;
+  width: 500px;">
+  Hi, {{ .username }}. We noticed that you haven’t posted any highs or lows today. Actually, why not do it now?
+</div>
+</div>
+  <div style="text-align:center; padding-bottom: 50px;">
+  <a href="{{ .buttonLink }}"
+    style="padding-left:67px;
+	    padding-right:67px;
+		height: 52.5px;
+		background-color:#00bd54;
+		border-radius:200px;
+		color:#ffffff;
+		display:inline-block;
+		font-family: 'Lato', sans-serif;
+		font-size:24px;
+		line-height:52.5px;
+		text-align:center;
+		text-decoration:none;
+		-webkit-text-size-adjust:none;">Post now </a>
+</div>
+<div style="padding-left: 20px;">
+<div style="padding-bottom: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size:21px;
+  line-height:25px;
+  text-align:left;
+  letter-spacing: 0.6px;
+  color:#505050;
+  width: 500px;">
+Posting everyday helps to track your motivators and mood killers,
+which you can go through during a 1-on-1. Yay for a better you!
+</div>
+<div style="font-family: 'Lato', sans-serif;
+  font-size:12px;
+  line-height:5px;
+  text-align:center;
+  color:#505050;
+  opacity: 0.5;
+  padding-bottom: 20px;
+  font-weight: 400;" align="center">
+  <p>You can change email frequency from Clanbeat <a href="{{ .settingsLink }}"><font color="#ff9c4a"> settings page.</font></a></p>
+  <p> If you no longer wish to receive reminders, <a href="{{ .unsubscribeLink }}"><font color="#ff9c4a">unsubscribe here.</font></a></p>
+</div>
+</div>
+{{ end }}
