@@ -19,24 +19,22 @@
   text-align:left;
   letter-spacing: 0.6px;
   color:#505050;
-  width: 500px;">
+  width: 500px;
+  margin-bottom: 20px;">
   {{ .message }}
 </div>
+<table>
+	<tbody>
+		<tr>
+			<td>
+				<img src="{{ .fromPicture }}" style="width: 200px; height: 200px; border-radius: 50%;" />
+			</td>
+			<td>
+				<p>{{ .fromUsername }}</p>
+				<p>{{ .fromJobTitle }}</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 </div>
-  <div style="text-align:center; padding-bottom: 50px;">
-  <a href="{{ .link }}"
-    style="padding-left:67px;
-	    padding-right:67px;
-		height: 52.5px;
-		background-color:#00bd54;
-		border-radius:200px;
-		color:#ffffff;
-		display:inline-block;
-		font-family: 'Lato', sans-serif;
-		font-size:24px;
-		line-height:52.5px;
-		text-align:center;
-		text-decoration:none;
-		-webkit-text-size-adjust:none;">Go to Clanbeat</a>
-  	</div>
 {{ end }}

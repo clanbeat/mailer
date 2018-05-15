@@ -252,7 +252,7 @@ var testData = map[string][]byte{
 			"fromUsername": "John Doe",
 			"fromJobTitle": "Master of Disaster",
 			"fromPicture": "https://placekitten.com/200/200",
-			"message": "A random message\r\n\r\nEmail me at void@dev.null"
+			"message": "A random message\n\r\n\rEmail me at void@dev.null"
 		}
 	`),
 	"demoRequest": []byte(`
