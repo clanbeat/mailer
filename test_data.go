@@ -246,6 +246,15 @@ var testData = map[string][]byte{
 			"invitationLink": ""
 		}
 	`),
+	"userMessage": []byte(`
+		{
+			"toFirstName": "Ivan",
+			"fromUsername": "John Doe"
+			"fromJobTitle": "Master of Disaster",
+			"fromPicture": "https://placekitten.com/200/200"
+			"message": "A random message\n\nEmail me at void@dev.null"
+		}
+	`),
 	"demoRequest": []byte(`
 		{
 		  "email": "someone@somemail.com",
