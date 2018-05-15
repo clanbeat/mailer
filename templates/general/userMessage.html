@@ -12,26 +12,25 @@
   margin-bottom:40px;">
   	Hi {{ .toFirstName }},
 </div>
-<div style="padding-bottom: 80px;
-  font-family: 'Lato', sans-serif;
+<div style="font-family: 'Lato', sans-serif;
   font-size:21px;
   line-height:25px;
   text-align:left;
   letter-spacing: 0.6px;
   color:#505050;
   width: 500px;
-  margin-bottom: 20px;">
+  margin-bottom: 30px;">
   {{ .message }}
 </div>
 <table>
 	<tbody>
 		<tr>
 			<td>
-				<img src="{{ .fromPicture }}" style="width: 200px; height: 200px; border-radius: 50%;" />
+				<img src="{{ .fromPicture }}" style="width: 80px; height: 80px; margin-right: 10px; border-radius: 50%;" />
 			</td>
 			<td>
-				<p>{{ .fromUsername }}</p>
-				<p>{{ .fromJobTitle }}</p>
+				<p style="font-family: 'Lato', sans-serif; color: #505050;">{{ .fromUsername }}</p>
+				<p style="font-family: 'Lato', sans-serif; color: #ABB5C0;">{{ .fromJobTitle }}</p>
 			</td>
 		</tr>
 	</tbody>
