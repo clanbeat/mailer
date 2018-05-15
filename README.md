@@ -45,3 +45,4 @@ Links to email templates
  * [User upgraded to Manager](http://clanbeat-mailer-staging.herokuapp.com/emails/upgradedToManager)
  * [Weekly goals update](http://clanbeat-mailer-staging.herokuapp.com/emails/weeklyGoals)
  * [One week to 1-on-1](http://clanbeat-mailer-staging.herokuapp.com/emails/oneWeekToReview)
+ * [User message](http://clanbeat-mailer-staging.herokuapp.com/emails/userMessage)
