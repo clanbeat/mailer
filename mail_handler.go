@@ -2,9 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	"net/http"
+
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"github.com/clanbeat/mailer/src/sender"
-	"net/http"
 )
 
 func postEmail(c *gin.Context) {
@@ -14,10 +15,10 @@ func postEmail(c *gin.Context) {
 		c.JSON(badRequest(err.Error()))
 		return
 	}
-	if err := sender.Send(m); err != nil {
-		c.JSON(badRequest(err.Error()))
-		return
-	}
+	// if err := sender.Send(m); err != nil {
+	// 	c.JSON(badRequest(err.Error()))
+	// 	return
+	// }
 	c.AbortWithStatus(http.StatusNoContent)
 }
 
@@ -41,7 +42,7 @@ func getEmail(c *gin.Context) {
 
 func sendTest(c *gin.Context) {
 	name := c.Param("name")
-	email := c.Param("email")
+	// email := c.Param("email")
 
 	if !sender.TemplateExists(name) {
 		c.JSON(http.StatusNotFound, gin.H{"error_message": "template missing"})
@@ -54,16 +55,16 @@ func sendTest(c *gin.Context) {
 			return
 		}
 	}
-	m := &sender.Mailable{
-		To:       email,
-		From:     "Clanbeat <hello@clanbeat.com>",
-		Subject:  "Test email",
-		Template: name,
-		Message:  d,
-	}
-	if err := sender.Send(m); err != nil {
-		c.JSON(badRequest(err.Error()))
-		return
-	}
+	// m := &sender.Mailable{
+	// 	To:       email,
+	// 	From:     "Clanbeat <hello@clanbeat.com>",
+	// 	Subject:  "Test email",
+	// 	Template: name,
+	// 	Message:  d,
+	// }
+	// if err := sender.Send(m); err != nil {
+	// 	c.JSON(badRequest(err.Error()))
+	// 	return
+	// }
 	c.JSON(http.StatusOK, gin.H{"message": "email sent"})
 }
