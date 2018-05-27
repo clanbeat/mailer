@@ -2,10 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"log"
-
 	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/clanbeat/broker"
 	"github.com/clanbeat/mailer/src/sender"
+	"log"
 )
 
 func registerBrokerHandlers() {
@@ -28,8 +27,8 @@ func emailHandler() func(msg broker.Delivery) {
 		}
 
 		log.Println("email", m)
-		// if err := sender.Send(&m); err != nil {
-		// 	errorTracker.Error(err)
-		// }
+		if err := sender.Send(&m); err != nil {
+			errorTracker.Error(err)
+		}
 	}
 }

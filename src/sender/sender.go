@@ -1,10 +1,9 @@
 package sender
 
 import (
+	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/sendgrid/sendgrid-go"
 	"html/template"
 	"log"
-
-	"github.com/clanbeat/mailer/Godeps/_workspace/src/github.com/sendgrid/sendgrid-go"
 )
 
 type SendGridConf struct {
@@ -41,7 +40,7 @@ func Send(em *Mailable) error {
 	if err := em.validate(); err != nil {
 		return err
 	}
-	// sg := sendgrid.NewSendGridClient(Config.Username, Config.Secret)
+	sg := sendgrid.NewSendGridClient(Config.Username, Config.Secret)
 	message := sendgrid.NewMail()
 	message.SetFrom(em.From)
 	message.AddTo(em.To)
@@ -54,12 +53,11 @@ func Send(em *Mailable) error {
 
 	message.SetHTML(msg)
 	log.Println("Email sent to", em.To)
-	// if err := sg.Send(message); err == nil {
-	// 	return nil
-	// } else {
-	// 	log.Println("no email sent")
-	// 	log.Println(err)
-	// 	return err
-	// }
-	return nil
+	if err := sg.Send(message); err == nil {
+		return nil
+	} else {
+		log.Println("no email sent")
+		log.Println(err)
+		return err
+	}
 }
