@@ -31,10 +31,20 @@ var funcMap = template.FuncMap{
 	"categoryImage":      categoryImage,
 	"makeRange":          makeRange,
 	"unescapedHTML":      unescapedHTML,
+	"isBad":              isBad,
+	"difference":         difference,
 }
 
 func unescapedHTML(html string) template.HTML {
 	return template.HTML(html)
+}
+
+func isBad(value, oldValue float64) bool {
+	return (value - oldValue) < 0
+}
+
+func difference(a, b float64) float64 {
+	return a - b
 }
 
 func addReviewSeparator(i int) bool {
