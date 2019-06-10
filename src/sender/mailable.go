@@ -30,6 +30,21 @@ var funcMap = template.FuncMap{
 	"checkBoxImage":      checkBoxImage,
 	"categoryImage":      categoryImage,
 	"makeRange":          makeRange,
+	"unescapedHTML":      unescapedHTML,
+	"isBad":              isBad,
+	"difference":         difference,
+}
+
+func unescapedHTML(html string) template.HTML {
+	return template.HTML(html)
+}
+
+func isBad(value, oldValue float64) bool {
+	return (value - oldValue) < 0
+}
+
+func difference(a, b float64) float64 {
+	return a - b
 }
 
 func addReviewSeparator(i int) bool {
@@ -75,17 +90,17 @@ func titleForMood(score float64) string {
 	s := int64(score)
 	switch s {
 	case 1:
-		return "terrible"
+		return "Terrible"
 	case 2:
-		return "bad"
+		return "Bad"
 	case 3:
-		return "meh"
+		return "Meh"
 	case 4:
-		return "alright"
+		return "Alright"
 	case 5:
-		return "good"
+		return "Good"
 	default:
-		return "super"
+		return "Super"
 	}
 }
 
@@ -168,6 +183,9 @@ func (m *Mailable) getTemplate(tmplts map[string]*template.Template) (string, er
 	if !exists {
 		return "", errors.New("no such template")
 	}
+
+	fmt.Printf("\nMessage: %+v\n", m.Message["moods"])
+
 	if err := t.ExecuteTemplate(&layoutBuf, "layout", m.Message); err != nil {
 		return "", err
 	}

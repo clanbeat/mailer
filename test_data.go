@@ -349,36 +349,41 @@ var testData = map[string][]byte{
 				"username": "Janika Liiv",
 				"position": 1,
 				"value": 99,
-				"jobTitle": "Developer",
-				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
+				"oldValue": 20,
+				"jobTitle": "Developer"
 			},{
 				"username": "Gloria Paul",
 				"position": 2,
 				"value": 99,
+				"oldValue": 100,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Janika",
 				"position": 3,
 				"value": 99,
+				"oldValue": 20,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Gloria Paul",
 				"position": 4,
-				"value": 99,
+				"value": 20,
+				"oldValue": 20,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Janika",
 				"position": 5,
-				"value": 99,
+				"value": 56,
+				"oldValue": 100,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Gloria Paul",
 				"position": 6,
 				"value": 99,
+				"oldValue": 20,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			}],
@@ -386,14 +391,15 @@ var testData = map[string][]byte{
 				"username": "Janika Liiv",
 				"position": 1,
 				"value": 10,
+				"oldValue": 2,
 				"jobTitle": "Developer",
 				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145192266114299914518"
 			},{
 				"username": "Agu Suur",
 				"position": 1,
 				"value": 5,
-				"jobTitle": "Front End Master",
-				"picture": "https://clanbeat-avatars.s3.eu-central-1.amazonaws.com/145942953651036900117"
+				"oldValue": 20,
+				"jobTitle": "Front End Master"
 			}],
 			"reviews": [{
 				"username": "Janika Liiv",
